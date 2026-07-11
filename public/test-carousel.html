@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste Coverflow</title>
+<style>
+  :root{ --bg: #16130F; --panel: #17171a; --gold: #c9a24b; --gold-soft: #e6cd8a; --ink: #f3ede0; --muted: #9a9490; }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html,body{ background: var(--bg); color: var(--ink); font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  body{ padding: 48px 20px 90px; }
+  .stage-clip{ overflow: hidden; padding: 40px 0 60px; }
+  .stage{ position: relative; height: 380px; perspective: 1200px; -webkit-perspective: 1200px; display: flex; align-items: center; justify-content: center; }
+  .coverflow{ position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; }
+  .coverflow .card{ position: absolute; width: 190px; height: 270px; border-radius: 8px; overflow: hidden; background: var(--panel); border: 1px solid rgba(201,162,75,.3); box-shadow: 0 18px 34px rgba(0,0,0,.5); transition: transform .55s cubic-bezier(.22,.85,.32,1), opacity .55s ease, filter .55s ease; -webkit-transition: -webkit-transform .55s cubic-bezier(.22,.85,.32,1), opacity .55s ease, -webkit-filter .55s ease; backface-visibility: hidden; -webkit-backface-visibility: hidden; cursor: pointer; }
+  .coverflow .card img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+  .controls{ display:flex; align-items:center; justify-content:center; gap: 18px; margin-top: 8px; }
+  .controls button{ width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(201,162,75,.5); background: transparent; color: var(--gold-soft); font-size: 18px; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+  .controls button:hover{ background: rgba(201,162,75,.15); }
+  .controls button:active{ transform: scale(.92); }
+  .dots{ display:flex; gap: 7px; }
+  .dots span{ width: 6px; height: 6px; border-radius: 50%; background: rgba(201,162,75,.3); transition: background .25s ease, transform .25s ease; }
+  .dots span.active{ background: var(--gold); transform: scale(1.3); }
+  .name-caption{ text-align:center; font-size: 13px; color: var(--muted); margin-top: 14px; min-height: 18px; }
+  .name-caption b{ color: var(--gold-soft); font-weight: 500; }
+  @media (max-width: 560px){ .stage{ height: 320px; } .coverflow .card{ width: 150px; height: 220px; } }
+</style>
+</head>
+<body>
+
+<div style="max-width:980px; margin:0 auto;">
+  <div class="stage-clip">
+    <div class="stage">
+      <div class="coverflow" id="coverflow"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <button id="cfPrev" aria-label="Anterior">&#8249;</button>
+    <div class="dots" id="cfDots"></div>
+    <button id="cfNext" aria-label="Proximo">&#8250;</button>
+  </div>
+  <div class="name-caption" id="cfCaption"></div>
+</div>
+
+<script>
+var SLIDES = [
+  { src: '/galeria/look-cowboy.jpg', name: 'Look country' },
+  { src: '/galeria/conjunto-azul-floral.jpg', name: 'Conjunto floral' },
+  { src: '/galeria/calca-infantil.jpg', name: 'Calca infantil' },
+  { src: '/1.jpg', name: 'Modelo' },
+  { src: '/ig_2.jpg', name: 'Look 2' },
+  { src: '/ig_3.jpg', name: 'Look 3' },
+  { src: '/ig_5.jpg', name: 'Look 5' },
+  { src: '/ig_6.jpg', name: 'Look 6' },
+  { src: '/ig_8.jpg', name: 'Look 8' },
+  { src: '/ig_10.jpg', name: 'Look 10' },
+  { src: '/ig_11.jpg', name: 'Look 11' }
+];
+
+function createAutoplay(hEl, adv, delay){
+  var t=null;
+  function start(){ stop(); t=setInterval(adv,delay); }
+  function stop(){ if(t)clearInterval(t); t=null; }
+  hEl.addEventListener('mouseenter',stop);
+  hEl.addEventListener('mouseleave',start);
+  hEl.addEventListener('touchstart',stop,{passive:true});
+  hEl.addEventListener('touchend',start,{passive:true});
+  start();
+  return {reset:function(){start();},stop:stop};
+}
+
+(function(){
+  var wrap=document.getElementById('coverflow');
+  var dotsWrap=document.getElementById('cfDots');
+  var caption=document.getElementById('cfCaption');
+  var n=SLIDES.length;
+  var active=0;
+  var cards=[];
+
+  SLIDES.forEach(function(p,i){
+    var card=document.createElement('div');
+    card.className='card';
+    card.innerHTML='<img src="'+p.src+'" alt="'+p.name+'" loading="lazy">';
+    card.addEventListener('click',function(){
+      if(i===active)return;
+      active=i;
+      render();
+      if(auto)auto.reset();
+    });
+    wrap.appendChild(card);
+    cards.push(card);
+    var dot=document.createElement('span');
+    if(i===0)dot.classList.add('active');
+    dotsWrap.appendChild(dot);
+  });
+
+  function styleFor(offset){
+    var abs=Math.abs(offset);
+    var dir=Math.sign(offset);
+    if(abs===0)return{t:'translateX(0) translateZ(0) rotateY(0deg) scale(1)',z:5,op:1};
+    var x=dir*Math.min(abs,3)*95;
+    var z=-abs*110;
+    var rot=-dir*42;
+    var scale=Math.max(1-abs*0.14,0.55);
+    var op=abs>3?0:1-abs*0.18;
+    return{t:'translateX('+x+'px) translateZ('+z+'px) rotateY('+rot+'deg) scale('+scale+')',z:5-abs,op:op};
+  }
+
+  function render(){
+    cards.forEach(function(card,i){
+      var offset=i-active;
+      if(offset>n/2)offset-=n;
+      if(offset<-n/2)offset+=n;
+      var s=styleFor(offset);
+      card.style.transform=s.t;
+      card.style.webkitTransform=s.t;
+      card.style.zIndex=s.z;
+      card.style.opacity=s.op;
+      card.style.pointerEvents=s.op<=0?'none':'auto';
+    });
+    var dots=dotsWrap.children;
+    for(var d=0;d<dots.length;d++){
+      dots[d].classList.toggle('active',d===active);
+    }
+    caption.innerHTML='<b>'+SLIDES[active].name+'</b>';
+  }
+  function goNext(){active=(active+1)%n;render();}
+  function goPrev(){active=(active-1+n)%n;render();}
+
+  var auto=createAutoplay(wrap.closest('.stage'),goNext,1500);
+  document.getElementById('cfNext').addEventListener('click',function(){goNext();auto.reset();});
+  document.getElementById('cfPrev').addEventListener('click',function(){goPrev();auto.reset();});
+  render();
+})();
+</script>
+</body>
+</html>
