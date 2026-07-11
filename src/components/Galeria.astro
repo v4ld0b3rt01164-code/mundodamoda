@@ -77,6 +77,7 @@
     -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.22, 0.85, 0.32, 1), opacity 0.55s ease, -webkit-filter 0.55s ease;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    will-change: transform, opacity;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
@@ -191,8 +192,9 @@
     { src: '/ig_11.jpg', alt: 'Look da loja Mundo da Moda' },
   ];
 
-  (function () {
+  function initCoverflow() {
     const wrap = document.getElementById('coverflowWrap');
+    if (!wrap) return;
     const dotsWrap = document.getElementById('cfDots');
     const n = SLIDES.length;
     let active = 0;
@@ -215,38 +217,42 @@
       const dot = document.createElement('button');
       dot.className = 'cf-dot';
       if (i === 0) dot.classList.add('is-active');
-      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
       dot.addEventListener('click', () => { active = i; render(); resetAutoplay(); });
       dotsWrap.appendChild(dot);
     });
 
     function styleFor(offset) {
-      const abs = Math.abs(offset);
-      const dir = Math.sign(offset);
+      var abs = offset < 0 ? -offset : offset;
+      var dir = offset < 0 ? -1 : offset > 0 ? 1 : 0;
       if (abs === 0) {
         return { t: 'translateX(0) translateZ(0) rotateY(0deg) scale(1)', z: 5, op: 1 };
       }
-      const x = dir * Math.min(abs, 3) * 95;
-      const z = -abs * 110;
-      const rot = -dir * 42;
-      const scale = Math.max(1 - abs * 0.14, 0.55);
-      const op = abs > 3 ? 0 : 1 - abs * 0.18;
-      return { t: `translateX(${x}px) translateZ(${z}px) rotateY(${rot}deg) scale(${scale})`, z: 5 - abs, op };
+      var x = dir * (abs < 3 ? abs : 3) * 95;
+      var z = -abs * 110;
+      var rot = -dir * 42;
+      var scale = (1 - abs * 0.14) > 0.55 ? (1 - abs * 0.14) : 0.55;
+      var op = abs > 3 ? 0 : 1 - abs * 0.18;
+      return { t: 'translateX(' + x + 'px) translateZ(' + z + 'px) rotateY(' + rot + 'deg) scale(' + scale + ')', z: 5 - abs, op: op };
     }
 
     function render() {
-      cards.forEach((card, i) => {
-        let offset = i - active;
+      cards.forEach(function (card, i) {
+        var offset = i - active;
         if (offset > n / 2) offset -= n;
         if (offset < -n / 2) offset += n;
-        const s = styleFor(offset);
+        var s = styleFor(offset);
         card.style.transform = s.t;
         card.style.webkitTransform = s.t;
         card.style.zIndex = s.z;
         card.style.opacity = s.op;
         card.style.pointerEvents = s.op <= 0 ? 'none' : 'auto';
       });
-      [...dotsWrap.children].forEach((d, i) => d.classList.toggle('is-active', i === active));
+      var dots = dotsWrap.children;
+      for (var i = 0; i < dots.length; i++) {
+        if (i === active) { dots[i].classList.add('is-active'); }
+        else { dots[i].classList.remove('is-active'); }
+      }
     }
 
     function goNext() { active = (active + 1) % n; render(); }
@@ -254,7 +260,7 @@
 
     function startAutoplay() {
       stopAutoplay();
-      timer = setInterval(goNext, 3200);
+      timer = setInterval(goNext, 1500);
     }
 
     function stopAutoplay() {
@@ -263,21 +269,27 @@
 
     function resetAutoplay() { stopAutoplay(); startAutoplay(); }
 
-    document.getElementById('cfNext').addEventListener('click', () => { goNext(); resetAutoplay(); });
-    document.getElementById('cfPrev').addEventListener('click', () => { goPrev(); resetAutoplay(); });
+    document.getElementById('cfNext').addEventListener('click', function () { goNext(); resetAutoplay(); });
+    document.getElementById('cfPrev').addEventListener('click', function () { goPrev(); resetAutoplay(); });
 
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowLeft') { goPrev(); resetAutoplay(); }
       if (e.key === 'ArrowRight') { goNext(); resetAutoplay(); }
     });
 
-    const stage = wrap.closest('.cf-stage');
+    var stage = wrap.closest('.cf-stage');
     stage.addEventListener('mouseenter', stopAutoplay);
     stage.addEventListener('mouseleave', startAutoplay);
     stage.addEventListener('touchstart', stopAutoplay, { passive: true });
-    stage.addEventListener('touchend', () => resetAutoplay());
+    stage.addEventListener('touchend', function () { resetAutoplay(); });
 
     render();
     startAutoplay();
-  })();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCoverflow);
+  } else {
+    initCoverflow();
+  }
 </script>
