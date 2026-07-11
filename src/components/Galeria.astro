@@ -1,15 +1,9 @@
-<section class="relative bg-preto-fachada py-16 sm:py-24" id="galeria">
-  <div class="max-w-7xl mx-auto px-4 sm:px-8">
-    <div class="text-center mb-12 sm:mb-16">
-      <div class="flex items-center justify-center gap-3 mb-3">
-        <img src="/hero0.jpeg" alt="" class="w-10 h-10 rounded-full object-cover" aria-hidden="true" loading="lazy" width="40" height="40" />
-        <span class="text-amarelo-calcada font-semibold tracking-widest uppercase text-sm">Galeria</span>
-      </div>
-      <h2 class="text-branco-parede text-3xl sm:text-4xl font-bold">
-        Looks que <span class="text-dourado-script">inspiram</span>
-      </h2>
-      <div class="section-divider mt-4"></div>
-    </div>
+---
+// Galeria — Coverflow 3D (Demo 2 do carrossel-3d.html)
+---
+
+<section id="galeria" style="background:#16130F; padding:64px 0">
+  <div style="max-width:980px; margin:0 auto; padding:0 32px">
 
     <div class="stage-clip">
       <div class="stage">
@@ -22,13 +16,13 @@
       <button id="cfNext" aria-label="Próximo">&#8250;</button>
     </div>
 
-    <div class="text-center mt-12">
-      <a href="https://www.instagram.com/mundo_da_moda_miguelopolis/" target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center gap-2 px-8 py-4 border border-branco-parede/20 text-branco-parede/70 hover:text-dourado-script hover:border-dourado-script/30 transition-all duration-300 font-semibold uppercase text-sm tracking-wider">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    <div style="text-align:center; margin-top:56px">
+      <a href="https://www.instagram.com/mundo_da_moda_miguelopolis/" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; padding:16px 32px; border:1px solid rgba(247,245,242,0.2); color:rgba(247,245,242,0.7); text-decoration:none; font-family:'Work Sans',system-ui,sans-serif; font-weight:600; font-size:14px; letter-spacing:1px; text-transform:uppercase; transition:all 0.3s">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Mais looks no Instagram
       </a>
     </div>
+
   </div>
 </section>
 
@@ -37,7 +31,6 @@
     overflow: hidden;
     padding: 40px 0 60px;
   }
-
   .stage {
     position: relative;
     height: 380px;
@@ -47,7 +40,6 @@
     align-items: center;
     justify-content: center;
   }
-
   .coverflow {
     position: relative;
     width: 100%;
@@ -58,7 +50,6 @@
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
   }
-
   .coverflow .card {
     position: absolute;
     width: 190px;
@@ -74,14 +65,12 @@
     -webkit-backface-visibility: hidden;
     cursor: pointer;
   }
-
   .coverflow .card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-
   .controls {
     display: flex;
     align-items: center;
@@ -89,7 +78,6 @@
     gap: 18px;
     margin-top: 8px;
   }
-
   .controls button {
     width: 42px;
     height: 42px;
@@ -101,25 +89,20 @@
     cursor: pointer;
     transition: background .2s ease, transform .2s ease;
   }
-
   .controls button:hover {
     background: rgba(201, 162, 75, .15);
   }
-
   .controls button:active {
     transform: scale(.92);
   }
-
   .controls button:focus-visible {
     outline: 2px solid #e6cd8a;
     outline-offset: 2px;
   }
-
   .dots {
     display: flex;
     gap: 7px;
   }
-
   .dots span {
     width: 6px;
     height: 6px;
@@ -127,32 +110,20 @@
     background: rgba(201, 162, 75, .3);
     transition: background .25s ease, transform .25s ease;
   }
-
   .dots span.active {
     background: #c9a24b;
     transform: scale(1.3);
   }
-
   @media (max-width: 560px) {
-    .stage {
-      height: 320px;
-    }
-
-    .coverflow .card {
-      width: 150px;
-      height: 220px;
-    }
+    .stage { height: 320px; }
+    .coverflow .card { width: 150px; height: 220px; }
   }
-
   @media (prefers-reduced-motion: reduce) {
-    .coverflow .card {
-      transition: none !important;
-      -webkit-transition: none !important;
-    }
+    .coverflow .card { transition: none !important; -webkit-transition: none !important; }
   }
 </style>
 
-<script is:inline>
+<script>
   const SLIDES = [
     { src: '/galeria/look-cowboy.jpg', alt: 'Look country — vestido brilhante com chapéu e botas' },
     { src: '/galeria/conjunto-azul-floral.jpg', alt: 'Conjunto blazer e saia — estampa floral azul' },
@@ -187,8 +158,8 @@
 
     start();
     return {
-      reset() { start(); },
-      stop
+      reset: function () { start(); },
+      stop: stop
     };
   }
 
@@ -196,17 +167,17 @@
      DEMO 2 — COVERFLOW
   ========================================================= */
   (function () {
-    const wrap = document.getElementById('coverflow');
-    const dotsWrap = document.getElementById('cfDots');
-    const n = SLIDES.length;
-    let active = 0;
-    const cards = [];
+    var wrap = document.getElementById('coverflow');
+    var dotsWrap = document.getElementById('cfDots');
+    var n = SLIDES.length;
+    var active = 0;
+    var cards = [];
 
-    SLIDES.forEach((p, i) => {
-      const card = document.createElement('div');
+    SLIDES.forEach(function (p, i) {
+      var card = document.createElement('div');
       card.className = 'card';
-      card.innerHTML = `<img src="${p.src}" alt="${p.alt}" loading="lazy">`;
-      card.addEventListener('click', () => {
+      card.innerHTML = '<img src="' + p.src + '" alt="' + p.alt + '" loading="lazy">';
+      card.addEventListener('click', function () {
         if (i === active) return;
         active = i;
         render();
@@ -215,46 +186,55 @@
       wrap.appendChild(card);
       cards.push(card);
 
-      const dot = document.createElement('span');
+      var dot = document.createElement('span');
       if (i === 0) dot.classList.add('active');
       dotsWrap.appendChild(dot);
     });
 
     function styleFor(offset) {
-      const abs = Math.abs(offset);
-      const dir = Math.sign(offset);
+      var abs = Math.abs(offset);
+      var dir = Math.sign(offset);
       if (abs === 0) {
         return { t: 'translateX(0) translateZ(0) rotateY(0deg) scale(1)', z: 5, op: 1 };
       }
-      const x = dir * Math.min(abs, 3) * 95;
-      const z = -abs * 110;
-      const rot = -dir * 42;
-      const scale = Math.max(1 - abs * 0.14, 0.55);
-      const op = abs > 3 ? 0 : 1 - abs * 0.18;
-      return { t: `translateX(${x}px) translateZ(${z}px) rotateY(${rot}deg) scale(${scale})`, z: 5 - abs, op };
+      var x = dir * Math.min(abs, 3) * 95;
+      var z = -abs * 110;
+      var rot = -dir * 42;
+      var scale = Math.max(1 - abs * 0.14, 0.55);
+      var op = abs > 3 ? 0 : 1 - abs * 0.18;
+      return { t: 'translateX(' + x + 'px) translateZ(' + z + 'px) rotateY(' + rot + 'deg) scale(' + scale + ')', z: 5 - abs, op: op };
     }
 
     function render() {
-      cards.forEach((card, i) => {
-        let offset = i - active;
+      cards.forEach(function (card, i) {
+        var offset = i - active;
         // wrap-around to shortest path
         if (offset > n / 2) offset -= n;
         if (offset < -n / 2) offset += n;
-        const s = styleFor(offset);
+        var s = styleFor(offset);
         card.style.transform = s.t;
         card.style.webkitTransform = s.t;
         card.style.zIndex = s.z;
         card.style.opacity = s.op;
         card.style.pointerEvents = s.op <= 0 ? 'none' : 'auto';
       });
-      [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === active));
+      var dots = dotsWrap.children;
+      for (var d = 0; d < dots.length; d++) {
+        if (d === active) { dots[d].classList.add('active'); }
+        else { dots[d].classList.remove('active'); }
+      }
     }
     function goNext() { active = (active + 1) % n; render(); }
     function goPrev() { active = (active - 1 + n) % n; render(); }
 
-    const auto = createAutoplay(wrap.closest('.stage'), goNext, 3200);
-    document.getElementById('cfNext').addEventListener('click', () => { goNext(); auto.reset(); });
-    document.getElementById('cfPrev').addEventListener('click', () => { goPrev(); auto.reset(); });
-    render();
+    var auto = createAutoplay(wrap.closest('.stage'), goNext, 2000);
+    document.getElementById('cfNext').addEventListener('click', function () { goNext(); auto.reset(); });
+    document.getElementById('cfPrev').addEventListener('click', function () { goPrev(); auto.reset(); });
+
+    // Aguarda 1 frame para o browser pintar os cards antes de aplicar as posições 3D,
+    // garantindo que a transição CSS tenha um estado "from" válido.
+    requestAnimationFrame(function () {
+      render();
+    });
   })();
 </script>
