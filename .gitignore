@@ -9,6 +9,7 @@ dist/
 !README.md
 !PRODUCT.md
 !DESIGN.md
+!AGENTS.md
 .playwright-mcp/
 .astro/
 snapshots/
