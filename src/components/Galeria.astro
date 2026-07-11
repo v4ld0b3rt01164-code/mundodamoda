@@ -11,22 +11,18 @@
       <div class="section-divider mt-4"></div>
     </div>
 
-    <div class="cf-stage-clip">
-      <div class="cf-stage" id="cfStage">
-        <div class="cf-coverflow" id="coverflowWrap"></div>
-
-        <button class="cf-arrow cf-arrow--prev" id="cfPrev" aria-label="Anterior">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="cf-arrow cf-arrow--next" id="cfNext" aria-label="Próximo">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-
-        <div class="cf-dots" id="cfDots"></div>
+    <div class="stage-clip">
+      <div class="stage">
+        <div class="coverflow" id="coverflow"></div>
       </div>
     </div>
+    <div class="controls">
+      <button id="cfPrev" aria-label="Anterior">&#8249;</button>
+      <div class="dots" id="cfDots"></div>
+      <button id="cfNext" aria-label="Próximo">&#8250;</button>
+    </div>
 
-    <div class="text-center mt-14">
+    <div class="text-center mt-12">
       <a href="https://www.instagram.com/mundo_da_moda_miguelopolis/" target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 px-8 py-4 border border-branco-parede/20 text-branco-parede/70 hover:text-dourado-script hover:border-dourado-script/30 transition-all duration-300 font-semibold uppercase text-sm tracking-wider">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -37,14 +33,14 @@
 </section>
 
 <style is:global>
-  .cf-stage-clip {
+  .stage-clip {
     overflow: hidden;
     padding: 40px 0 60px;
   }
 
-  .cf-stage {
+  .stage {
     position: relative;
-    height: 460px;
+    height: 380px;
     perspective: 1200px;
     -webkit-perspective: 1200px;
     display: flex;
@@ -52,7 +48,7 @@
     justify-content: center;
   }
 
-  .cf-coverflow {
+  .coverflow {
     position: relative;
     width: 100%;
     height: 100%;
@@ -63,110 +59,93 @@
     -webkit-transform-style: preserve-3d;
   }
 
-  .cf-card {
+  .coverflow .card {
     position: absolute;
-    width: 210px;
-    height: 300px;
+    width: 190px;
+    height: 270px;
     border-radius: 8px;
     overflow: hidden;
     background: #17171a;
-    border: 1px solid rgba(201, 162, 75, 0.35);
+    border: 1px solid rgba(201, 162, 75, 0.3);
     box-shadow: 0 18px 34px rgba(0, 0, 0, 0.5);
+    transition: transform .55s cubic-bezier(.22, .85, .32, 1), opacity .55s ease, filter .55s ease;
+    -webkit-transition: -webkit-transform .55s cubic-bezier(.22, .85, .32, 1), opacity .55s ease, -webkit-filter .55s ease;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
   }
 
-  .cf-card img {
+  .coverflow .card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .cf-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    z-index: 20;
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 8px;
+  }
+
+  .controls button {
     width: 42px;
     height: 42px;
     border-radius: 50%;
     border: 1px solid rgba(201, 162, 75, 0.5);
     background: transparent;
     color: #e6cd8a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 18px;
     cursor: pointer;
-    transition: background 0.2s ease;
-    -webkit-tap-highlight-color: transparent;
+    transition: background .2s ease, transform .2s ease;
   }
 
-  .cf-arrow:hover {
-    background: rgba(201, 162, 75, 0.15);
+  .controls button:hover {
+    background: rgba(201, 162, 75, .15);
   }
 
-  .cf-arrow:active {
-    transform: translateY(-50%) scale(0.92);
-    -webkit-transform: translateY(-50%) scale(0.92);
+  .controls button:active {
+    transform: scale(.92);
   }
 
-  .cf-arrow--prev { left: 10px; }
-  .cf-arrow--next { right: 10px; }
+  .controls button:focus-visible {
+    outline: 2px solid #e6cd8a;
+    outline-offset: 2px;
+  }
 
-  .cf-dots {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
+  .dots {
     display: flex;
     gap: 7px;
-    z-index: 20;
   }
 
-  .cf-dot {
+  .dots span {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: rgba(201, 162, 75, 0.3);
-    transition: background 0.25s ease, transform 0.25s ease;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+    background: rgba(201, 162, 75, .3);
+    transition: background .25s ease, transform .25s ease;
   }
 
-  .cf-dot.is-active {
+  .dots span.active {
     background: #c9a24b;
     transform: scale(1.3);
   }
 
-  @media (min-width: 640px) {
-    .cf-stage { height: 520px; }
-    .cf-card { width: 250px; height: 350px; }
-    .cf-arrow { width: 46px; height: 46px; }
-    .cf-arrow--prev { left: 20px; }
-    .cf-arrow--next { right: 20px; }
-  }
+  @media (max-width: 560px) {
+    .stage {
+      height: 320px;
+    }
 
-  @media (min-width: 1024px) {
-    .cf-stage { height: 580px; }
-    .cf-card { width: 280px; height: 390px; }
-    .cf-arrow--prev { left: calc(50% - 230px); }
-    .cf-arrow--next { right: calc(50% - 230px); }
-  }
-
-  @media (max-width: 480px) {
-    .cf-stage { height: 400px; }
-    .cf-card { width: 180px; height: 260px; }
+    .coverflow .card {
+      width: 150px;
+      height: 220px;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cf-card {
+    .coverflow .card {
       transition: none !important;
       -webkit-transition: none !important;
     }
@@ -188,38 +167,56 @@
     { src: '/ig_11.jpg', alt: 'Look da loja Mundo da Moda' },
   ];
 
-  function init() {
-    const wrap = document.getElementById('coverflowWrap');
-    if (!wrap) return;
+  /* =========================================================
+     AUTOPLAY HELPER
+  ========================================================= */
+  function createAutoplay(hoverEl, advance, delay) {
+    let timer = null;
+    function start() {
+      stop();
+      timer = setInterval(advance, delay);
+    }
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+    hoverEl.addEventListener('mouseenter', stop);
+    hoverEl.addEventListener('mouseleave', start);
+    hoverEl.addEventListener('touchstart', stop, { passive: true });
+    hoverEl.addEventListener('touchend', start, { passive: true });
+
+    start();
+    return {
+      reset() { start(); },
+      stop
+    };
+  }
+
+  /* =========================================================
+     DEMO 2 — COVERFLOW
+  ========================================================= */
+  (function () {
+    const wrap = document.getElementById('coverflow');
     const dotsWrap = document.getElementById('cfDots');
-    const stage = document.getElementById('cfStage');
     const n = SLIDES.length;
     let active = 0;
-    let timer = null;
     const cards = [];
-    const TRANS = 'transform .55s cubic-bezier(.22,.85,.32,1), opacity .55s ease';
-    const WEBKIT_TRANS = '-webkit-transform .55s cubic-bezier(.22,.85,.32,1), opacity .55s ease';
 
     SLIDES.forEach((p, i) => {
       const card = document.createElement('div');
-      card.className = 'cf-card';
-      card.innerHTML = `<img src="${p.src}" alt="${p.alt}" loading="${i < 2 ? 'eager' : 'lazy'}">`;
-      card.style.transition = TRANS;
-      card.style.webkitTransition = WEBKIT_TRANS;
+      card.className = 'card';
+      card.innerHTML = `<img src="${p.src}" alt="${p.alt}" loading="lazy">`;
       card.addEventListener('click', () => {
         if (i === active) return;
         active = i;
         render();
-        resetAutoplay();
+        if (auto) auto.reset();
       });
       wrap.appendChild(card);
       cards.push(card);
 
-      const dot = document.createElement('button');
-      dot.className = 'cf-dot';
-      if (i === 0) dot.classList.add('is-active');
-      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-      dot.addEventListener('click', () => { active = i; render(); resetAutoplay(); });
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
       dotsWrap.appendChild(dot);
     });
 
@@ -234,16 +231,13 @@
       const rot = -dir * 42;
       const scale = Math.max(1 - abs * 0.14, 0.55);
       const op = abs > 3 ? 0 : 1 - abs * 0.18;
-      return {
-        t: `translateX(${x}px) translateZ(${z}px) rotateY(${rot}deg) scale(${scale})`,
-        z: 5 - abs,
-        op: op
-      };
+      return { t: `translateX(${x}px) translateZ(${z}px) rotateY(${rot}deg) scale(${scale})`, z: 5 - abs, op };
     }
 
     function render() {
       cards.forEach((card, i) => {
         let offset = i - active;
+        // wrap-around to shortest path
         if (offset > n / 2) offset -= n;
         if (offset < -n / 2) offset += n;
         const s = styleFor(offset);
@@ -253,48 +247,14 @@
         card.style.opacity = s.op;
         card.style.pointerEvents = s.op <= 0 ? 'none' : 'auto';
       });
-      const dots = dotsWrap.children;
-      for (let d = 0; d < dots.length; d++) {
-        dots[d].classList.toggle('is-active', d === active);
-      }
+      [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === active));
     }
-
     function goNext() { active = (active + 1) % n; render(); }
     function goPrev() { active = (active - 1 + n) % n; render(); }
 
-    function startAutoplay() {
-      stopAutoplay();
-      timer = setInterval(goNext, 2000);
-    }
-
-    function stopAutoplay() {
-      if (timer) { clearInterval(timer); timer = null; }
-    }
-
-    function resetAutoplay() { stopAutoplay(); startAutoplay(); }
-
-    document.getElementById('cfNext').addEventListener('click', () => { goNext(); resetAutoplay(); });
-    document.getElementById('cfPrev').addEventListener('click', () => { goPrev(); resetAutoplay(); });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') { goPrev(); resetAutoplay(); }
-      if (e.key === 'ArrowRight') { goNext(); resetAutoplay(); }
-    });
-
-    stage.addEventListener('mouseenter', stopAutoplay);
-    stage.addEventListener('mouseleave', startAutoplay);
-    stage.addEventListener('touchstart', stopAutoplay, { passive: true });
-    stage.addEventListener('touchend', () => resetAutoplay());
-
-    requestAnimationFrame(() => {
-      render();
-      startAutoplay();
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+    const auto = createAutoplay(wrap.closest('.stage'), goNext, 3200);
+    document.getElementById('cfNext').addEventListener('click', () => { goNext(); auto.reset(); });
+    document.getElementById('cfPrev').addEventListener('click', () => { goPrev(); auto.reset(); });
+    render();
+  })();
 </script>
