@@ -1,11 +1,14 @@
 <section class="relative min-h-screen flex flex-col overflow-hidden">
-  <img
-    src="/hero1.jpeg"
-    alt="Mundo da Moda — Selo bordado"
-    class="absolute inset-0 w-full h-full object-cover"
-    loading="eager"
-    decoding="async"
-  />
+  <picture class="absolute inset-0 w-full h-full">
+    <source srcset="/hero0-mobile.jpeg" media="(max-width: 640px)" />
+    <img
+      src="/hero1.jpeg"
+      alt="Mundo da Moda — Selo bordado"
+      class="w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+  </picture>
 
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce-slow" aria-hidden="true">
