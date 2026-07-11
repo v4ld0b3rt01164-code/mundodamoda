@@ -1,16 +1,8 @@
-<section class="relative bg-preto-fachada py-16 sm:py-24 overflow-hidden">
+<section class="relative bg-preto-fachada py-16 sm:py-24 overflow-hidden" id="galeria">
   <div class="max-w-7xl mx-auto px-4 sm:px-8">
     <div class="text-center mb-12 sm:mb-16">
       <div class="flex items-center justify-center gap-3 mb-3">
-        <img
-          src="/hero0.jpeg"
-          alt=""
-          class="w-10 h-10 rounded-full object-cover"
-          aria-hidden="true"
-          loading="lazy"
-          width="40"
-          height="40"
-        />
+        <img src="/hero0.jpeg" alt="" class="w-10 h-10 rounded-full object-cover" aria-hidden="true" loading="lazy" width="40" height="40" />
         <span class="text-amarelo-calcada font-semibold tracking-widest uppercase text-sm">Galeria</span>
       </div>
       <h2 class="text-branco-parede text-3xl sm:text-4xl font-bold">
@@ -19,31 +11,23 @@
       <div class="section-divider mt-4"></div>
     </div>
 
-    <!-- Carrossel 3D Coverflow -->
-    <div class="carousel-3d-wrapper" id="carousel3d">
-      <div class="carousel-3d-container" id="carouselTrack">
-        <!-- Os slides são gerados via JS -->
-      </div>
+    <!-- Carrossel 3D -->
+    <div class="carousel-stage" id="carouselStage">
+      <div class="carousel-track" id="carouselTrack"></div>
 
-      <!-- Controles -->
-      <button class="carousel-3d-btn carousel-3d-prev" id="carouselPrev" aria-label="Slide anterior">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-      <button class="carousel-3d-btn carousel-3d-next" id="carouselNext" aria-label="Próximo slide">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <button class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Próximo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
 
-      <!-- Dots -->
-      <div class="carousel-3d-dots" id="carouselDots"></div>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
 
-    <div class="text-center mt-10">
-      <a
-        href="https://www.instagram.com/mundo_da_moda_miguelopolis/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-8 py-4 border border-branco-parede/20 text-branco-parede/70 hover:text-dourado-script hover:border-dourado-script/30 transition-all duration-300 font-semibold uppercase text-sm tracking-wider"
-      >
+    <div class="text-center mt-14">
+      <a href="https://www.instagram.com/mundo_da_moda_miguelopolis/" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 px-8 py-4 border border-branco-parede/20 text-branco-parede/70 hover:text-dourado-script hover:border-dourado-script/30 transition-all duration-300 font-semibold uppercase text-sm tracking-wider">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Mais looks no Instagram
       </a>
@@ -52,168 +36,182 @@
 </section>
 
 <style>
-  .carousel-3d-wrapper {
+  .carousel-stage {
     position: relative;
     width: 100%;
-    height: 520px;
-    perspective: 1200px;
-    perspective-origin: 50% 50%;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    position: relative;
+    width: 300px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .carousel-3d-container {
-    position: relative;
-    width: 320px;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-    will-change: transform;
-  }
-
-  .carousel-3d-slide {
+  .carousel-card {
     position: absolute;
-    top: 10px;
-    left: 0;
     width: 100%;
-    height: calc(100% - 20px);
-    border-radius: 2px;
+    height: 90%;
+    border-radius: 4px;
     overflow: hidden;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transition: opacity 0.4s ease-out;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease;
+    will-change: transform, opacity;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
   }
 
-  .carousel-3d-slide img {
+  .carousel-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .carousel-3d-slide::after {
+  /* Overlay para slides laterais */
+  .carousel-card::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(22,19,15,0.6) 0%, transparent 40%);
+    background: rgba(22, 19, 15, 0.55);
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+
+  .carousel-card.is-center::after {
     opacity: 0;
-    transition: opacity 0.4s ease-out;
   }
 
-  .carousel-3d-slide.active::after {
-    opacity: 0;
-  }
-
-  .carousel-3d-slide.dim::after {
-    opacity: 1;
-  }
-
-  /* Botões de navegação */
-  .carousel-3d-btn {
+  /* Setas */
+  .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 20;
-    width: 48px;
-    height: 48px;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: 1px solid rgba(247,245,242,0.2);
-    background: rgba(22,19,15,0.7);
+    background: rgba(22,19,15,0.8);
     color: rgba(247,245,242,0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease-out;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .carousel-3d-btn:hover {
+  .carousel-arrow:hover {
     background: rgba(201,162,75,0.2);
     border-color: rgba(201,162,75,0.5);
     color: #C9A24B;
   }
 
-  .carousel-3d-prev {
-    left: calc(50% - 200px);
+  .carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
   }
 
-  .carousel-3d-next {
-    right: calc(50% - 200px);
+  .carousel-arrow--prev {
+    left: 16px;
+  }
+
+  .carousel-arrow--next {
+    right: 16px;
   }
 
   /* Dots */
-  .carousel-3d-dots {
+  .carousel-dots {
     position: absolute;
-    bottom: -40px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
-    z-index: 20;
+    gap: 8px;
+    z-index: 10;
   }
 
-  .carousel-3d-dot {
-    width: 10px;
-    height: 10px;
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     border: 1px solid rgba(247,245,242,0.3);
     background: transparent;
     cursor: pointer;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .carousel-3d-dot.active {
+  .carousel-dot.is-active {
     background: #C9A24B;
     border-color: #C9A24B;
-    transform: scale(1.3);
+    transform: scale(1.4);
   }
 
-  /* Mobile */
-  @media (max-width: 768px) {
-    .carousel-3d-wrapper {
-      height: 420px;
-      perspective: 900px;
+  @media (min-width: 640px) {
+    .carousel-stage {
+      height: 560px;
     }
 
-    .carousel-3d-container {
-      width: 260px;
+    .carousel-track {
+      width: 360px;
     }
 
-    .carousel-3d-prev {
-      left: 8px;
+    .carousel-arrow {
+      width: 48px;
+      height: 48px;
     }
 
-    .carousel-3d-next {
-      right: 8px;
+    .carousel-arrow--prev {
+      left: 24px;
     }
 
-    .carousel-3d-btn {
-      width: 40px;
-      height: 40px;
+    .carousel-arrow--next {
+      right: 24px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .carousel-stage {
+      height: 600px;
+    }
+
+    .carousel-track {
+      width: 400px;
+    }
+
+    .carousel-arrow--prev {
+      left: calc(50% - 280px);
+    }
+
+    .carousel-arrow--next {
+      right: calc(50% - 280px);
     }
   }
 
   @media (max-width: 480px) {
-    .carousel-3d-wrapper {
-      height: 380px;
-      perspective: 800px;
+    .carousel-stage {
+      height: 400px;
     }
 
-    .carousel-3d-container {
-      width: 220px;
+    .carousel-track {
+      width: 260px;
+    }
+
+    .carousel-card {
+      height: 88%;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .carousel-3d-container {
-      transition: none !important;
-    }
-
-    .carousel-3d-slide {
+    .carousel-card {
       transition: none !important;
     }
   }
@@ -237,140 +235,139 @@
   class Carousel3D {
     constructor() {
       this.slides = SLIDES;
-      this.currentIndex = 0;
-      this.isTransitioning = false;
-      this.touchStartX = 0;
-      this.touchDeltaX = 0;
+      this.current = 0;
+      this.animating = false;
+      this.autoplay = null;
+      this.touchX = 0;
+      this.swipeX = 0;
 
       this.track = document.getElementById('carouselTrack');
-      this.dotsContainer = document.getElementById('carouselDots');
+      this.dotsEl = document.getElementById('carouselDots');
       this.prevBtn = document.getElementById('carouselPrev');
       this.nextBtn = document.getElementById('carouselNext');
-      this.wrapper = document.getElementById('carousel3d');
+      this.stage = document.getElementById('carouselStage');
 
       this.build();
-      this.bindEvents();
-      this.update();
+      this.bind();
+      this.render();
+      this.startAutoplay();
     }
 
     build() {
-      this.slides.forEach((slide, i) => {
-        const div = document.createElement('div');
-        div.className = 'carousel-3d-slide';
-        div.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" loading="${i < 3 ? 'eager' : 'lazy'}" />`;
-        this.track.appendChild(div);
+      this.cards = this.slides.map((s, i) => {
+        const el = document.createElement('div');
+        el.className = 'carousel-card';
+        el.innerHTML = `<img src="${s.src}" alt="${s.alt}" loading="${i < 2 ? 'eager' : 'lazy'}" />`;
+        el.addEventListener('click', () => { if (i !== this.current) this.go(i); });
+        this.track.appendChild(el);
 
         const dot = document.createElement('button');
-        dot.className = 'carousel-3d-dot';
-        dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
-        dot.addEventListener('click', () => this.goTo(i));
-        this.dotsContainer.appendChild(dot);
-      });
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', `Slide ${i + 1}`);
+        dot.addEventListener('click', () => this.go(i));
+        this.dotsEl.appendChild(dot);
 
-      this.slideEls = this.track.querySelectorAll('.carousel-3d-slide');
-      this.dotEls = this.dotsContainer.querySelectorAll('.carousel-3d-dot');
+        return { el, dot };
+      });
     }
 
-    bindEvents() {
-      this.prevBtn.addEventListener('click', () => this.prev());
-      this.nextBtn.addEventListener('click', () => this.next());
+    bind() {
+      this.prevBtn.addEventListener('click', () => { this.prev(); this.resetAutoplay(); });
+      this.nextBtn.addEventListener('click', () => { this.next(); this.resetAutoplay(); });
 
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') this.prev();
-        if (e.key === 'ArrowRight') this.next();
+        if (e.key === 'ArrowLeft') { this.prev(); this.resetAutoplay(); }
+        if (e.key === 'ArrowRight') { this.next(); this.resetAutoplay(); }
       });
 
-      this.wrapper.addEventListener('touchstart', (e) => {
-        this.touchStartX = e.touches[0].clientX;
-        this.touchDeltaX = 0;
+      this.stage.addEventListener('touchstart', (e) => {
+        this.touchX = e.touches[0].clientX;
+        this.swipeX = 0;
+        this.pauseAutoplay();
       }, { passive: true });
 
-      this.wrapper.addEventListener('touchmove', (e) => {
-        this.touchDeltaX = e.touches[0].clientX - this.touchStartX;
+      this.stage.addEventListener('touchmove', (e) => {
+        this.swipeX = e.touches[0].clientX - this.touchX;
       }, { passive: true });
 
-      this.wrapper.addEventListener('touchend', () => {
-        if (Math.abs(this.touchDeltaX) > 60) {
-          if (this.touchDeltaX > 0) this.prev();
-          else this.next();
+      this.stage.addEventListener('touchend', () => {
+        if (Math.abs(this.swipeX) > 50) {
+          this.swipeX > 0 ? this.prev() : this.next();
         }
-        this.touchDeltaX = 0;
+        this.resetAutoplay();
       });
+
+      this.stage.addEventListener('mouseenter', () => this.pauseAutoplay());
+      this.stage.addEventListener('mouseleave', () => this.startAutoplay());
     }
 
-    goTo(index) {
-      if (this.isTransitioning || index === this.currentIndex) return;
+    go(index) {
+      if (this.animating || index === this.current) return;
       if (index < 0) index = this.slides.length - 1;
       if (index >= this.slides.length) index = 0;
-
-      this.isTransitioning = true;
-      this.currentIndex = index;
-      this.update();
-
-      setTimeout(() => {
-        this.isTransitioning = false;
-      }, 700);
+      this.animating = true;
+      this.current = index;
+      this.render();
+      setTimeout(() => { this.animating = false; }, 650);
     }
 
-    prev() {
-      this.goTo(this.currentIndex - 1);
-    }
+    prev() { this.go(this.current - 1); }
+    next() { this.go(this.current + 1); }
 
-    next() {
-      this.goTo(this.currentIndex + 1);
-    }
-
-    update() {
+    render() {
       const total = this.slides.length;
-      const containerW = this.track.parentElement.clientWidth;
-      const slideW = Math.min(320, containerW - 80);
-      const gapAngle = 12; // degrees between slides
-      const zOffset = 380; // depth
+      const trackW = this.track.clientWidth;
 
-      this.slideEls.forEach((el, i) => {
-        el.style.width = `${slideW}px`;
+      this.cards.forEach(({ el, dot }, i) => {
+        let offset = i - this.current;
+        el.style.width = trackW + 'px';
 
-        const offset = i - this.currentIndex;
-        let angle, tz, ox, oy;
+        // Wrap-around for smoother infinite feel
+        if (offset > total / 2) offset -= total;
+        if (offset < -total / 2) offset += total;
+
+        const absOffset = Math.abs(offset);
+        let tx, scale, opacity, z;
 
         if (offset === 0) {
-          angle = 0;
-          tz = 0;
-          ox = 0;
-          oy = 1;
-          el.classList.add('active');
-          el.classList.remove('dim');
+          tx = 0;
+          scale = 1;
+          opacity = 1;
+          z = 3;
+          el.classList.add('is-center');
         } else {
-          angle = offset * gapAngle;
-          tz = -zOffset;
-          ox = offset * -0.2;
-          oy = 0.85;
-          el.classList.remove('active');
-          el.classList.add('dim');
+          const dir = offset > 0 ? 1 : -1;
+          tx = dir * 55 * (1 + absOffset * 0.3);
+          scale = Math.max(0.75, 1 - absOffset * 0.12);
+          opacity = Math.max(0.15, 1 - absOffset * 0.35);
+          z = absOffset === 1 ? 2 : 1;
+          el.classList.remove('is-center');
         }
 
-        el.style.transform = `rotateY(${angle}deg) translateZ(${tz}px) scale(${oy})`;
-        el.style.opacity = offset === 0 ? '1' : '0.35';
-        el.style.zIndex = offset === 0 ? '10' : '1';
-      });
+        el.style.transform = `translateX(${tx}%) scale(${scale})`;
+        el.style.opacity = opacity;
+        el.style.zIndex = z;
 
-      this.dotEls.forEach((el, i) => {
-        el.classList.toggle('active', i === this.currentIndex);
+        dot.classList.toggle('is-active', i === this.current);
       });
+    }
+
+    startAutoplay() {
+      this.stopAutoplay();
+      this.autoplay = setInterval(() => this.next(), 4000);
+    }
+
+    stopAutoplay() {
+      if (this.autoplay) { clearInterval(this.autoplay); this.autoplay = null; }
+    }
+
+    pauseAutoplay() { this.stopAutoplay(); }
+
+    resetAutoplay() {
+      this.stopAutoplay();
+      this.startAutoplay();
     }
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    new Carousel3D();
-    window.addEventListener('resize', () => {
-      const carousel = document.querySelector('.carousel-3d-wrapper');
-      if (carousel && carousel._instance) {
-        carousel._instance.update();
-      }
-    });
-  });
-
   new Carousel3D();
-  const wrapperEl = document.querySelector('.carousel-3d-wrapper');
-  if (wrapperEl) wrapperEl._instance = wrapperEl;
 </script>
