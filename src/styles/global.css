@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playball&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Edwardian Script ITC';
+  src: url('/edwardianscriptitc.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;

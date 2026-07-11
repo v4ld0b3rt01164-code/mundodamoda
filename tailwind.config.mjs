@@ -11,7 +11,7 @@ export default {
         'branco-parede': '#F7F5F2',
       },
       fontFamily: {
-        script: ['"Edwardian Script ITC"', '"Great Vibes"', '"Playball"', 'cursive'],
+        script: ['"Edwardian Script ITC"', 'cursive'],
         sans: ['"Work Sans"', 'system-ui', 'sans-serif'],
       },
     },
