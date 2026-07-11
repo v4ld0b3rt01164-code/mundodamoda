@@ -3,4 +3,16 @@ dist/
 .env
 .DS_Store
 *.log
+*.png
+*.yml
+*.md
+!README.md
+!PRODUCT.md
+!DESIGN.md
 .playwright-mcp/
+.astro/
+snapshots/
+facebook-images.json
+instagram-snapshot.yml
+facebook-snapshot.yml
+snapshot-*.md
