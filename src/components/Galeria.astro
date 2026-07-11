@@ -12,7 +12,7 @@
     </div>
 
     <div class="cf-stage-clip">
-      <div class="cf-stage">
+      <div class="cf-stage" id="cfStage">
         <div class="cf-coverflow" id="coverflowWrap"></div>
 
         <button class="cf-arrow cf-arrow--prev" id="cfPrev" aria-label="Anterior">
@@ -37,7 +37,6 @@
 </section>
 
 <style is:global>
-  /* Safari: overflow:hidden separado de preserve-3d (evita flatten) */
   .cf-stage-clip {
     overflow: hidden;
     padding: 40px 0 60px;
@@ -73,11 +72,8 @@
     background: #17171a;
     border: 1px solid rgba(201, 162, 75, 0.35);
     box-shadow: 0 18px 34px rgba(0, 0, 0, 0.5);
-    transition: transform 0.55s cubic-bezier(0.22, 0.85, 0.32, 1), opacity 0.55s ease, filter 0.55s ease;
-    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.22, 0.85, 0.32, 1), opacity 0.55s ease, -webkit-filter 0.55s ease;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    will-change: transform, opacity;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
@@ -192,19 +188,24 @@
     { src: '/ig_11.jpg', alt: 'Look da loja Mundo da Moda' },
   ];
 
-  function initCoverflow() {
+  function init() {
     const wrap = document.getElementById('coverflowWrap');
     if (!wrap) return;
     const dotsWrap = document.getElementById('cfDots');
+    const stage = document.getElementById('cfStage');
     const n = SLIDES.length;
     let active = 0;
     let timer = null;
     const cards = [];
+    const TRANS = 'transform .55s cubic-bezier(.22,.85,.32,1), opacity .55s ease';
+    const WEBKIT_TRANS = '-webkit-transform .55s cubic-bezier(.22,.85,.32,1), opacity .55s ease';
 
     SLIDES.forEach((p, i) => {
       const card = document.createElement('div');
       card.className = 'cf-card';
       card.innerHTML = `<img src="${p.src}" alt="${p.alt}" loading="${i < 2 ? 'eager' : 'lazy'}">`;
+      card.style.transition = TRANS;
+      card.style.webkitTransition = WEBKIT_TRANS;
       card.addEventListener('click', () => {
         if (i === active) return;
         active = i;
@@ -223,35 +224,38 @@
     });
 
     function styleFor(offset) {
-      var abs = offset < 0 ? -offset : offset;
-      var dir = offset < 0 ? -1 : offset > 0 ? 1 : 0;
+      const abs = Math.abs(offset);
+      const dir = Math.sign(offset);
       if (abs === 0) {
         return { t: 'translateX(0) translateZ(0) rotateY(0deg) scale(1)', z: 5, op: 1 };
       }
-      var x = dir * (abs < 3 ? abs : 3) * 95;
-      var z = -abs * 110;
-      var rot = -dir * 42;
-      var scale = (1 - abs * 0.14) > 0.55 ? (1 - abs * 0.14) : 0.55;
-      var op = abs > 3 ? 0 : 1 - abs * 0.18;
-      return { t: 'translateX(' + x + 'px) translateZ(' + z + 'px) rotateY(' + rot + 'deg) scale(' + scale + ')', z: 5 - abs, op: op };
+      const x = dir * Math.min(abs, 3) * 95;
+      const z = -abs * 110;
+      const rot = -dir * 42;
+      const scale = Math.max(1 - abs * 0.14, 0.55);
+      const op = abs > 3 ? 0 : 1 - abs * 0.18;
+      return {
+        t: `translateX(${x}px) translateZ(${z}px) rotateY(${rot}deg) scale(${scale})`,
+        z: 5 - abs,
+        op: op
+      };
     }
 
     function render() {
-      cards.forEach(function (card, i) {
-        var offset = i - active;
+      cards.forEach((card, i) => {
+        let offset = i - active;
         if (offset > n / 2) offset -= n;
         if (offset < -n / 2) offset += n;
-        var s = styleFor(offset);
+        const s = styleFor(offset);
         card.style.transform = s.t;
         card.style.webkitTransform = s.t;
         card.style.zIndex = s.z;
         card.style.opacity = s.op;
         card.style.pointerEvents = s.op <= 0 ? 'none' : 'auto';
       });
-      var dots = dotsWrap.children;
-      for (var i = 0; i < dots.length; i++) {
-        if (i === active) { dots[i].classList.add('is-active'); }
-        else { dots[i].classList.remove('is-active'); }
+      const dots = dotsWrap.children;
+      for (let d = 0; d < dots.length; d++) {
+        dots[d].classList.toggle('is-active', d === active);
       }
     }
 
@@ -260,7 +264,7 @@
 
     function startAutoplay() {
       stopAutoplay();
-      timer = setInterval(goNext, 1500);
+      timer = setInterval(goNext, 2000);
     }
 
     function stopAutoplay() {
@@ -269,27 +273,28 @@
 
     function resetAutoplay() { stopAutoplay(); startAutoplay(); }
 
-    document.getElementById('cfNext').addEventListener('click', function () { goNext(); resetAutoplay(); });
-    document.getElementById('cfPrev').addEventListener('click', function () { goPrev(); resetAutoplay(); });
+    document.getElementById('cfNext').addEventListener('click', () => { goNext(); resetAutoplay(); });
+    document.getElementById('cfPrev').addEventListener('click', () => { goPrev(); resetAutoplay(); });
 
-    document.addEventListener('keydown', function (e) {
+    document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') { goPrev(); resetAutoplay(); }
       if (e.key === 'ArrowRight') { goNext(); resetAutoplay(); }
     });
 
-    var stage = wrap.closest('.cf-stage');
     stage.addEventListener('mouseenter', stopAutoplay);
     stage.addEventListener('mouseleave', startAutoplay);
     stage.addEventListener('touchstart', stopAutoplay, { passive: true });
-    stage.addEventListener('touchend', function () { resetAutoplay(); });
+    stage.addEventListener('touchend', () => resetAutoplay());
 
-    render();
-    startAutoplay();
+    requestAnimationFrame(() => {
+      render();
+      startAutoplay();
+    });
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCoverflow);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initCoverflow();
+    init();
   }
 </script>
