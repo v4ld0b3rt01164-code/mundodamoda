@@ -1,5 +1,5 @@
 ---
-// Galeria — Coverflow 3D (Demo 2 do carrossel-3d.html)
+// Galeria — Coverflow 3D com animação JS (sem depender de CSS transitions)
 const slides = [
   { src: '/galeria/look-cowboy.jpg', alt: 'Look country — vestido brilhante com chapéu e botas' },
   { src: '/galeria/conjunto-azul-floral.jpg', alt: 'Conjunto blazer e saia — estampa floral azul' },
@@ -51,201 +51,192 @@ const slides = [
 </section>
 
 <style is:inline>
-  .stage-clip {
-    overflow: hidden;
-    padding: 40px 0 60px;
-  }
-  .stage {
-    position: relative;
-    height: 380px;
-    perspective: 1200px;
-    -webkit-perspective: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .coverflow {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-  }
-  .coverflow .card {
-    position: absolute;
-    width: 190px;
-    height: 270px;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #17171a;
-    border: 1px solid rgba(201, 162, 75, 0.3);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.5);
-    transition: transform .55s cubic-bezier(.22, .85, .32, 1), opacity .55s ease, filter .55s ease;
-    -webkit-transition: -webkit-transform .55s cubic-bezier(.22, .85, .32, 1), opacity .55s ease, -webkit-filter .55s ease;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    cursor: pointer;
-    /* Estado inicial via CSS — garante "from" para a transição */
-    opacity: 0;
-    transform: translateX(0) translateZ(-600px) rotateY(0deg) scale(0.6);
-  }
-  .coverflow .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 8px;
-    font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
-  }
-  .controls button {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid rgba(201, 162, 75, 0.5);
-    background: transparent;
-    color: #e6cd8a;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background .2s ease, transform .2s ease;
-  }
-  .controls button:hover {
-    background: rgba(201, 162, 75, .15);
-  }
-  .controls button:active {
-    transform: scale(.92);
-  }
-  .controls button:focus-visible {
-    outline: 2px solid #e6cd8a;
-    outline-offset: 2px;
-  }
-  .dots {
-    display: flex;
-    gap: 7px;
-  }
-  .dots span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(201, 162, 75, .3);
-    transition: background .25s ease, transform .25s ease;
-  }
-  .dots span.active {
-    background: #c9a24b;
-    transform: scale(1.3);
-  }
-  .name-caption {
-    text-align: center;
-    font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 13px;
-    color: #9a9490;
-    margin-top: 14px;
-    min-height: 18px;
-  }
-  .name-caption b {
-    color: #e6cd8a;
-    font-weight: 500;
-  }
-  @media (max-width: 560px) {
-    .stage { height: 320px; }
-    .coverflow .card { width: 150px; height: 220px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .coverflow .card { transition: none !important; -webkit-transition: none !important; }
-  }
+  .stage-clip { overflow: hidden; padding: 40px 0 60px; }
+  .stage { position: relative; height: 380px; perspective: 1200px; -webkit-perspective: 1200px; display: flex; align-items: center; justify-content: center; }
+  .coverflow { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; }
+  .coverflow .card { position: absolute; width: 190px; height: 270px; border-radius: 8px; overflow: hidden; background: #17171a; border: 1px solid rgba(201,162,75,.3); box-shadow: 0 18px 34px rgba(0,0,0,.5); backface-visibility: hidden; -webkit-backface-visibility: hidden; cursor: pointer; }
+  .coverflow .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 8px; font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif; }
+  .controls button { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(201,162,75,.5); background: transparent; color: #e6cd8a; font-size: 18px; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+  .controls button:hover { background: rgba(201,162,75,.15); }
+  .controls button:active { transform: scale(.92); }
+  .controls button:focus-visible { outline: 2px solid #e6cd8a; outline-offset: 2px; }
+  .dots { display: flex; gap: 7px; }
+  .dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(201,162,75,.3); transition: background .25s ease, transform .25s ease; }
+  .dots span.active { background: #c9a24b; transform: scale(1.3); }
+  .name-caption { text-align: center; font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #9a9490; margin-top: 14px; min-height: 18px; }
+  .name-caption b { color: #e6cd8a; font-weight: 500; }
+  @media (max-width: 560px) { .stage { height: 320px; } .coverflow .card { width: 150px; height: 220px; } }
+  @media (prefers-reduced-motion: reduce) { .coverflow .card { transition: none !important; } }
 </style>
 
 <script is:inline>
-  (function () {
-    var cards = document.querySelectorAll('#coverflow .card');
-    var dotsWrap = document.getElementById('cfDots');
-    var caption = document.getElementById('cfCaption');
-    var n = cards.length;
-    var active = 0;
+(function () {
+  var cards = document.querySelectorAll('#coverflow .card');
+  var dotsWrap = document.getElementById('cfDots');
+  var caption = document.getElementById('cfCaption');
+  var n = cards.length;
+  var active = 0;
 
-    function createAutoplay(hoverEl, advance, delay) {
-      var timer = null;
-      function start() { stop(); timer = setInterval(advance, delay); }
-      function stop() { if (timer) clearInterval(timer); timer = null; }
-      hoverEl.addEventListener('mouseenter', stop);
-      hoverEl.addEventListener('mouseleave', start);
-      hoverEl.addEventListener('touchstart', stop, { passive: true });
-      hoverEl.addEventListener('touchend', start, { passive: true });
-      start();
-      return { reset: function () { start(); }, stop: stop };
+  var altTexts = [
+    'Look country — vestido brilhante com chapéu e botas',
+    'Conjunto blazer e saia — estampa floral azul',
+    'Calça moletom infantil — conforto e qualidade',
+    'Modelo com look da Mundo da Moda',
+    'Look country com chapéu e botas',
+    'Conjunto estampado floral',
+    'Look casual feminino',
+    'Moda feminina estilo',
+    'Vestido estampado',
+    'Conjunto elegante',
+    'Look moderno'
+  ];
+
+  /* cubic-bezier(.22,.85,.32,1) */
+  var segs = [
+    { mx: 0.0625, my: 0.8381 },
+    { mx: 0.3281, my: 0.9514 },
+    { mx: 0.7344, my: 1.0 }
+  ];
+  function cubicEase(t) {
+    var cx = 3 * segs[0].mx;
+    var bx = 3 * (segs[1].mx - segs[0].mx) - cx;
+    var ax = 1 - cx - bx;
+    var cy = 3 * segs[0].my;
+    var by = 3 * (segs[1].my - segs[0].my) - cy;
+    var ay = 1 - cy - by;
+    var x = t;
+    for (var i = 0; i < 8; i++) {
+      var evalX = ((ax * x + bx) * x + cx) * x - t;
+      if (Math.abs(evalX) < 0.001) break;
+      var dx = (3 * ax * x + 2 * bx) * x + cx;
+      if (Math.abs(dx) < 1e-6) break;
+      x -= evalX / dx;
     }
+    return ((ay * x + by) * x + cy) * x;
+  }
 
-    function styleFor(offset) {
-      var abs = Math.abs(offset);
-      var dir = Math.sign(offset);
-      if (abs === 0) {
-        return { t: 'translateX(0) translateZ(0) rotateY(0deg) scale(1)', z: 5, op: 1 };
-      }
-      var x = dir * Math.min(abs, 3) * 95;
-      var z = -abs * 110;
-      var rot = -dir * 42;
-      var scale = Math.max(1 - abs * 0.14, 0.55);
-      var op = abs > 3 ? 0 : 1 - abs * 0.18;
-      return { t: 'translateX(' + x + 'px) translateZ(' + z + 'px) rotateY(' + rot + 'deg) scale(' + scale + ')', z: 5 - abs, op: op };
-    }
+  var DURATION = 550;
+  var anims = [];
+  var activeAnim = 0;
 
-    function render() {
-      for (var i = 0; i < n; i++) {
-        var offset = i - active;
-        if (offset > n / 2) offset -= n;
-        if (offset < -n / 2) offset += n;
-        var s = styleFor(offset);
-        cards[i].style.transform = s.t;
-        cards[i].style.webkitTransform = s.t;
-        cards[i].style.zIndex = s.z;
-        cards[i].style.opacity = s.op;
-        cards[i].style.pointerEvents = s.op <= 0 ? 'none' : 'auto';
-      }
-      var dots = dotsWrap.children;
-      for (var d = 0; d < dots.length; d++) {
-        dots[d].classList.toggle('active', d === active);
-      }
-      var altTexts = [
-        'Look country — vestido brilhante com chapéu e botas',
-        'Conjunto blazer e saia — estampa floral azul',
-        'Calça moletom infantil — conforto e qualidade',
-        'Modelo com look da Mundo da Moda',
-        'Look country com chapéu e botas',
-        'Conjunto estampado floral',
-        'Look casual feminino',
-        'Moda feminina estilo',
-        'Vestido estampado',
-        'Conjunto elegante',
-        'Look moderno'
-      ];
-      caption.innerHTML = '<b>' + altTexts[active] + '</b>';
-    }
+  function targetFor(offset) {
+    var abs = Math.abs(offset);
+    var dir = Math.sign(offset);
+    if (abs === 0) return { tx: 0, tz: 0, ry: 0, sc: 1, op: 1, z: 5 };
+    return {
+      tx: dir * Math.min(abs, 3) * 95,
+      tz: -abs * 110,
+      ry: -dir * 42,
+      sc: Math.max(1 - abs * 0.14, 0.55),
+      op: abs > 3 ? 0 : 1 - abs * 0.18,
+      z: 5 - abs
+    };
+  }
 
-    function goNext() { active = (active + 1) % n; render(); }
-    function goPrev() { active = (active - 1 + n) % n; render(); }
+  function applyCard(card, v) {
+    var t = 'translateX(' + v.tx + 'px) translateZ(' + v.tz + 'px) rotateY(' + v.ry + 'deg) scale(' + v.sc + ')';
+    card.style.transform = t;
+    card.style.webkitTransform = t;
+    card.style.zIndex = v.z;
+    card.style.opacity = v.op;
+    card.style.pointerEvents = v.op <= 0 ? 'none' : 'auto';
+  }
+
+  function animateTo(targets) {
+    var id = ++activeAnim;
+    var start = null;
+    var from = [];
+    var to = [];
 
     for (var i = 0; i < n; i++) {
-      (function (idx) {
-        cards[idx].addEventListener('click', function () {
-          if (idx === active) return;
-          active = idx;
-          render();
-          if (auto) auto.reset();
-        });
-      })(i);
+      var ct = cards[i].style.transform || '';
+      var mTx = ct.match(/translateX\(([-.\d]+)px\)/);
+      var mTz = ct.match(/translateZ\(([-.\d]+)px\)/);
+      var mRy = ct.match(/rotateY\(([-.\d]+)deg\)/);
+      var mSc = ct.match(/scale\(([-.\d]+)\)/);
+      from.push({
+        tx: mTx ? parseFloat(mTx[1]) : 0,
+        tz: mTz ? parseFloat(mTz[1]) : 0,
+        ry: mRy ? parseFloat(mRy[1]) : 0,
+        sc: mSc ? parseFloat(mSc[1]) : 1,
+        op: parseFloat(cards[i].style.opacity) || 0,
+        z: parseInt(cards[i].style.zIndex) || 0
+      });
+      to.push(targets[i]);
     }
 
-    var auto = createAutoplay(document.querySelector('#coverflow').closest('.stage'), goNext, 1500);
-    document.getElementById('cfNext').addEventListener('click', function () { goNext(); auto.reset(); });
-    document.getElementById('cfPrev').addEventListener('click', function () { goPrev(); auto.reset(); });
-    render();
-  })();
+    function step(ts) {
+      if (id !== activeAnim) return;
+      if (!start) start = ts;
+      var raw = (ts - start) / DURATION;
+      var p = Math.min(raw, 1);
+      var e = cubicEase(p);
+
+      for (var i = 0; i < n; i++) {
+        var f = from[i];
+        var t = to[i];
+        applyCard(cards[i], {
+          tx: f.tx + (t.tx - f.tx) * e,
+          tz: f.tz + (t.tz - f.tz) * e,
+          ry: f.ry + (t.ry - f.ry) * e,
+          sc: f.sc + (t.sc - f.sc) * e,
+          op: f.op + (t.op - f.op) * e,
+          z: t.z
+        });
+      }
+
+      if (raw < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function render() {
+    var targets = [];
+    for (var i = 0; i < n; i++) {
+      var offset = i - active;
+      if (offset > n / 2) offset -= n;
+      if (offset < -n / 2) offset += n;
+      targets.push(targetFor(offset));
+    }
+    animateTo(targets);
+
+    var dots = dotsWrap.children;
+    for (var d = 0; d < dots.length; d++) {
+      dots[d].classList.toggle('active', d === active);
+    }
+    caption.innerHTML = '<b>' + altTexts[active] + '</b>';
+  }
+
+  function goNext() { active = (active + 1) % n; render(); }
+  function goPrev() { active = (active - 1 + n) % n; render(); }
+
+  function createAutoplay(hEl, adv, delay) {
+    var timer = null;
+    function start() { stop(); timer = setInterval(adv, delay); }
+    function stop() { if (timer) clearInterval(timer); timer = null; }
+    hEl.addEventListener('mouseenter', stop);
+    hEl.addEventListener('mouseleave', start);
+    hEl.addEventListener('touchstart', stop, { passive: true });
+    hEl.addEventListener('touchend', start, { passive: true });
+    start();
+    return { reset: function () { start(); }, stop: stop };
+  }
+
+  for (var i = 0; i < n; i++) {
+    (function (idx) {
+      cards[idx].addEventListener('click', function () {
+        if (idx === active) return;
+        active = idx;
+        render();
+        if (auto) auto.reset();
+      });
+    })(i);
+  }
+
+  var auto = createAutoplay(document.querySelector('#coverflow').closest('.stage'), goNext, 1500);
+  document.getElementById('cfNext').addEventListener('click', function () { goNext(); auto.reset(); });
+  document.getElementById('cfPrev').addEventListener('click', function () { goPrev(); auto.reset(); });
+  render();
+})();
 </script>
