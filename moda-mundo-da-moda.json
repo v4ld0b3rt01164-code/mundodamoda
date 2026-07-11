@@ -1,0 +1,61 @@
+{
+  "cliente_id": "moda-mundo-da-moda",
+  "segmento": "Loja de Roupas",
+  "dados_negocio": {
+    "nome_fantasia": "Mundo da Moda",
+    "slogan": "A Moda que faz o seu estilo",
+    "especialidade": "Moda feminina, masculina e infantil — foco em plus size",
+    "endereco": {
+      "logradouro": "Av. Yoshi Nomiyama, 734",
+      "cidade": "Miguelópolis",
+      "estado": "SP",
+      "pais": "Brasil"
+    },
+    "geolocalizacao": {"latitude": -20.1857329, "longitude": -48.0219778},
+    "contato": {
+      "telefone": "+55 16 99240-7906",
+      "whatsapp": "+55 16 99240-7906",
+      "email": "kayender@hotmail.com",
+      "site_atual": null,
+      "instagram": "@mundo_da_moda_miguelopolis",
+      "facebook": "Mundo da Moda (facebook.com/mundodamodaplussize)"
+    },
+    "horario_funcionamento": {
+      "segunda_a_sabado": "09:00–19:00",
+      "domingo": "09:00–13:00"
+    },
+    "avaliacao_google": {
+      "nota": 4.9,
+      "numero_avaliacoes": 49,
+      "reviews_destaque": [
+        "Loja maravilhosa, encontra de tudo com estilo e elegância, ótimo custo-benefício",
+        "Melhor atendimento da cidade"
+      ]
+    },
+    "avaliacao_facebook": {
+      "percentual_recomendacao": "100%",
+      "numero_avaliacoes": 5
+    },
+    "place_id_google_maps": "ChIJZfcrygf9upQRIXpx4iUeQu8"
+  },
+  "conteudo_site": {
+    "categorias_produto": "Moda feminina, masculina e infantil, com foco em plus size; acessórios",
+    "servicos": "Curbside pickup e retirada na loja já confirmados via Facebook",
+    "sobre": "A CONFIRMAR COM O CLIENTE — história da loja, tempo de atuação, diferenciais",
+    "diferenciais": "Ampla variedade de tamanhos (plus size), preços acessíveis, parcelamento em cartão (BrasilCard, 45 dias para pagar)",
+    "fotos": "Fachada e foto de modelo/produto já obtidas; mais fotos de produto disponíveis no Instagram",
+    "depoimentos_adicionais": "A CONFIRMAR COM O CLIENTE — opcional, além dos reviews do Google/Facebook"
+  },
+  "infraestrutura_tecnica": {
+    "hospedagem": "Cloudflare Pages",
+    "dns_cdn": "Cloudflare",
+    "status_site_atual": "Sem site próprio identificado — presença em Google Maps, Instagram e Facebook",
+    "observacao": "Confirmar diretamente com o cliente antes de publicar; dados de contato vieram do Google Maps/Facebook e podem estar desatualizados"
+  },
+  "prospeccao": {
+    "prioridade": "Alta",
+    "fonte_dados": "Google Maps + Facebook + Instagram + fotos fornecidas pelo usuário",
+    "data_coleta": "2026-07-11",
+    "status_contato": "A iniciar"
+  }
+}

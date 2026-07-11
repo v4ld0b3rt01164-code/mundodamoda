@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-white bg-preto-fachada;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    max-width: 65ch;
+  }
+
+  ::selection {
+    @apply bg-amarelo-calcada text-preto-fachada;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-amarelo-calcada;
+  }
+}
+
+@layer components {
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full
+           transition-all duration-300 ease-out;
+  }
+
+  .btn-whatsapp:hover {
+    @apply bg-[#1ea952] scale-105;
+  }
+
+  .cta-dourado {
+    @apply inline-flex items-center gap-2 bg-dourado-script text-preto-fachada font-bold
+           px-8 py-4 text-lg tracking-wide uppercase transition-all duration-300 ease-out;
+  }
+
+  .cta-dourado:hover {
+    @apply bg-amarelo-calcada;
+  }
+
+  .section-divider {
+    @apply h-1 bg-vermelho-toldo w-24 mx-auto;
+  }
+
+  .stripe-red {
+    background: linear-gradient(180deg, #C81E1E 0%, #A01818 100%);
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

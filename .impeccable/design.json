@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-11T04:50:00Z",
+  "title": "Design System: Mundo da Moda",
+  "extensions": {
+    "colorMeta": {
+      "preto-fachada": { "role": "neutral", "displayName": "Preto Fachada", "canonical": "#16130F", "tonalRamp": ["#0D0B09", "#14110D", "#16130F", "#2A2520", "#3D3730", "#504A42", "#645D54", "#787167"] },
+      "vermelho-toldo": { "role": "primary", "displayName": "Vermelho Toldo", "canonical": "#C81E1E", "tonalRamp": ["#3C0909", "#640F0F", "#8C1515", "#C81E1E", "#D44A4A", "#E07676", "#ECA2A2", "#F7CECE"] },
+      "dourado-script": { "role": "primary", "displayName": "Dourado Script", "canonical": "#C9A24B", "tonalRamp": ["#3D2E10", "#5E4618", "#805E20", "#C9A24B", "#D4B56F", "#DFC793", "#EAD9B7", "#F4EBDB"] },
+      "amarelo-calcada": { "role": "secondary", "displayName": "Amarelo Calcada", "canonical": "#F2C230", "tonalRamp": ["#3D300C", "#5E4812", "#806018", "#F2C230", "#F5CE59", "#F7DA82", "#FAE6AB", "#FCF2D4"] },
+      "branco-parede": { "role": "neutral", "displayName": "Branco Parede", "canonical": "#F7F5F2", "tonalRamp": ["#3D3B38", "#5E5C58", "#807D78", "#A8A49E", "#C5C2BC", "#DEDBD6", "#EBE8E4", "#F7F5F2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Script", "purpose": "Nome da marca exclusivamente. Uso único e pontual." },
+      "body": { "displayName": "Corpo", "purpose": "Texto corrido, descrições, parágrafos." },
+      "label": { "displayName": "Label", "purpose": "Kickers de seção, badges, navegação. Uppercase, tracking-wide." }
+    },
+    "shadows": [
+      { "name": "image-highlight", "value": "0 25px 50px -12px rgba(0,0,0,0.5)", "purpose": "Highlight para fotos em destaque sobre fundos." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0, 0, 0.2, 1)", "purpose": "Transições de hover e estado. ease-out padrão 300ms." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (CTA Dourado)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Call-to-action principal. Fundo dourado, texto preto. Sempre com ícone WhatsApp.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347\"/></svg>FALE CONOSCO</a>",
+      "css": ".ds-btn-primary { background: #C9A24B; color: #16130F; padding: 1rem 2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border: none; border-radius: 0; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease-out; cursor: pointer; text-decoration: none; font-family: 'Work Sans', system-ui, sans-serif; } .ds-btn-primary:hover { background: #F2C230; } .ds-icon { width: 1.25rem; height: 1.25rem; fill: currentColor; }"
+    },
+    {
+      "name": "WhatsApp Floating Button",
+      "kind": "button",
+      "refersTo": "button-whatsapp",
+      "description": "Botão flutuante fixo no canto inferior direito. Sempre visível.",
+      "html": "<a href=\"#\" class=\"ds-btn-whatsapp\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347\"/></svg><span class=\"ds-btn-whatsapp-label\">WhatsApp</span></a>",
+      "css": ".ds-btn-whatsapp { background: #25D366; color: #fff; padding: 0.75rem 1.25rem; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; font-family: 'Work Sans', system-ui, sans-serif; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease-out; position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50; } .ds-btn-whatsapp:hover { background: #1ea952; transform: scale(1.05); } .ds-btn-whatsapp:active { transform: scale(0.95); } .ds-btn-whatsapp-label { display: none; } @media (min-width: 640px) { .ds-btn-whatsapp-label { display: inline; } }"
+    },
+    {
+      "name": "Section Divider",
+      "kind": "custom",
+      "refersTo": "section-divider",
+      "description": "Linha horizontal vermelha usada abaixo de títulos de seção.",
+      "html": "<div class=\"ds-section-divider\"></div>",
+      "css": ".ds-section-divider { height: 1px; background: #C81E1E; width: 6rem; margin: 1rem auto 0; }"
+    },
+    {
+      "name": "Red Stripe (Faixa Fachada)",
+      "kind": "custom",
+      "refersTo": "stripe-red",
+      "description": "Faixa horizontal vermelha no topo de seções, ecoando o toldo da fachada.",
+      "html": "<div class=\"ds-stripe-red\"></div>",
+      "css": ".ds-stripe-red { height: 3px; width: 100%; background: linear-gradient(180deg, #C81E1E 0%, #A01818 100%); } @media (min-width: 640px) { .ds-stripe-red { height: 4px; } }"
+    },
+    {
+      "name": "Secondary Button (Outline)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Botão secundário com borda sutil. Usado para links de redes sociais.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\">INSTAGRAM</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; border: 1px solid rgba(247,245,242,0.2); color: rgba(247,245,242,0.7); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem; text-decoration: none; font-family: 'Work Sans', system-ui, sans-serif; transition: all 0.3s ease-out; } .ds-btn-secondary:hover { color: #F7F5F2; border-color: rgba(201,162,75,0.4); }"
+    },
+    {
+      "name": "Diferencial Card",
+      "kind": "card",
+      "refersTo": "card-diferencial",
+      "description": "Card de diferencial sem borda, sem sombra, sem border-radius. Fundo preto com ícone em caixa vermelha.",
+      "html": "<div class=\"ds-card-diferencial\"><div class=\"ds-card-diferencial-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2\"/></svg></div><h3 class=\"ds-card-diferencial-title\">Plus Size</h3><p class=\"ds-card-diferencial-body\">Descrição do diferencial.</p></div>",
+      "css": ".ds-card-diferencial { background: #16130F; padding: 1.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; transition: transform 0.3s ease-out; } .ds-card-diferencial:hover { transform: translateY(-0.25rem); } .ds-card-diferencial-icon { width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center; background: #C81E1E; } .ds-card-diferencial-icon svg { width: 1.75rem; height: 1.75rem; color: #F7F5F2; } .ds-card-diferencial-title { color: #C9A24B; font-size: 1.125rem; font-weight: 700; font-family: 'Work Sans', system-ui, sans-serif; } .ds-card-diferencial-body { color: rgba(247,245,242,0.6); font-size: 0.875rem; line-height: 1.6; font-family: 'Work Sans', system-ui, sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Fachada Viva",
+    "overview": "O sistema visual é uma transposição digital da fachada real da loja em Miguelópolis-SP. Cada decisão de cor, tipografia e layout deriva diretamente do que já existe fisicamente na Av. Yoshi Nomiyama, 734 — o toldo vermelho, o letreiro dourado em script, o fundo preto fosco, o piso amarelo demarcado.",
+    "keyCharacteristics": [
+      "Paleta Committed: preto domina ~40% da superfície, vermelho ~15%, dourado/amarelo como acentos",
+      "Combinação ousada e comercial — energia de loja popular vibrante, não boutique minimalista",
+      "Tipografia: script display para nome da marca (uso pontual), sans-serif para corpo",
+      "Sem gradientes décor, sem glassmorphism, sem pastel",
+      "Hero: imagem pura do selo bordado dourado em tela cheia, sem overlay"
+    ],
+    "rules": [
+      { "name": "The Fachada Rule", "body": "Toda cor usada no site tem correspondência direta com um elemento físico da loja. Nenhuma cor é inventada ou escolhida por tendência.", "section": "colors" },
+      { "name": "The Two-Background Rule", "body": "Seções alternam entre preto-fachada e branco-parede. Nunca três fundos diferentes consecutivos.", "section": "colors" },
+      { "name": "The Script Restriction Rule", "body": "A fonte script (Playball) é usada exclusivamente no nome da marca e em nenhum outro lugar.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Superfícies são planas em repouso. Elevação aparece apenas no botão flutuante de WhatsApp e em imagens destacadas.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar a paleta exata de 5 cores derivadas da fachada real",
+      "Do alternar seções entre preto-fachada e branco-parede",
+      "Do usar a fonte script exclusivamente no nome da marca",
+      "Do usar fotos de conteúdo real da loja",
+      "Do usar o selo bordado como elemento pontual",
+      "Do manter o botão WhatsApp flutuante sempre visível"
+    ],
+    "donts": [
+      "Don't usar paleta pastel boutique feminina genérica",
+      "Don't usar templates genéricos de e-commerce de estoque",
+      "Don't usar clichês de IA (creme+serifada+terracota; preto+neon; layout jornal)",
+      "Don't usar o selo bordado como fundo com overlay escuro no hero",
+      "Don't inventar texto institucional vazio",
+      "Don't usar fonte script em parágrafos ou botões",
+      "Don't usar border-radius em cards",
+      "Don't usar sombras em cards estáticos",
+      "Don't usar glassmorphism ou blurs décor",
+      "Don't usar gradiente em texto"
+    ]
+  }
+}

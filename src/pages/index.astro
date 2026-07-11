@@ -1,0 +1,42 @@
+---
+import Hero from '../components/Hero.astro';
+import MarcaSection from '../components/MarcaSection.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import FachadaSection from '../components/FachadaSection.astro';
+import ModeloSection from '../components/ModeloSection.astro';
+import Diferenciais from '../components/Diferenciais.astro';
+import Galeria from '../components/Galeria.astro';
+import Reviews from '../components/Reviews.astro';
+import Contato from '../components/Contato.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mundo da Moda — A Moda que faz o seu estilo | Miguelópolis-SP</title>
+  <meta name="description" content="Loja de moda feminina, masculina e infantil com foco em plus size em Miguelópolis-SP. Preços acessíveis, parcelamento em até 45 dias e o melhor atendimento da cidade. 4.9★ no Google." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:title" content="Mundo da Moda — A Moda que faz o seu estilo" />
+  <meta property="og:description" content="Moda feminina, masculina e infantil com foco em plus size. Preços acessíveis e atendimento 5 estrelas em Miguelópolis-SP." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="theme-color" content="#16130F" />
+</head>
+<body class="bg-preto-fachada text-white font-sans antialiased">
+  <main>
+    <Hero />
+    <MarcaSection />
+    <FachadaSection />
+    <ModeloSection />
+    <Diferenciais />
+    <Galeria />
+    <Reviews />
+    <Contato />
+  </main>
+  <Footer />
+  <WhatsAppButton />
+</body>
+</html>

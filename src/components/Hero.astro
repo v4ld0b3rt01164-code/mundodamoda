@@ -1,0 +1,33 @@
+<section class="relative min-h-screen flex flex-col overflow-hidden">
+  <img
+    src="/hero1.jpeg"
+    alt="Mundo da Moda — Selo bordado"
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    decoding="async"
+  />
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce-slow" aria-hidden="true">
+    <svg class="w-8 h-8 text-dourado-script/60 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes bounceSlow {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+  }
+
+  .animate-bounce-slow {
+    animation: bounceSlow 2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-bounce-slow {
+      animation: none;
+    }
+  }
+</style>

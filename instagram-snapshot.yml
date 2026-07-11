@@ -1,0 +1,737 @@
+- generic [ref=e1]:
+  - generic [ref=e11]:
+    - generic [ref=e13]:
+      - link [ref=e16] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e24]:
+        - link [ref=e26] [cursor=pointer]:
+          - /url: /accounts/login/?next=%2Fmundo_da_moda_miguelopolis%2F&source=desktop_nav
+          - text: Entrar
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /accounts/emailsignup/
+          - text: Cadastre-se
+    - main [ref=e29]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - button [disabled] [ref=e34]:
+            - link [disabled] [ref=e36]
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - heading [level=2] [ref=e41]: mundo_da_moda_miguelopolis
+              - button [ref=e43] [cursor=pointer]
+            - generic [ref=e49]: Mundo Da Moda
+            - list [ref=e52]:
+              - listitem [ref=e53]:
+                - link [ref=e55] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e56]:
+                    - generic [ref=e57]: "3.540"
+                    - text: posts
+              - listitem [ref=e58]:
+                - link [ref=e60] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e61]:
+                    - generic [ref=e62]: "6.853"
+                    - text: seguidores
+              - listitem [ref=e63]:
+                - link [ref=e65] [cursor=pointer]:
+                  - /url: "#"
+                  - generic [ref=e66]:
+                    - generic [ref=e67]: "7.474"
+                    - text: seguindo
+            - generic [ref=e69]:
+              - generic [ref=e70]: Acessórios
+              - generic [ref=e73]:
+                - generic [ref=e74]: Mundo da Moda ✨ A moda que faz o seu estilo 👗
+                - generic [ref=e76]:
+                  - text: ...
+                  - button [ref=e77] [cursor=pointer]:
+                    - generic [ref=e78]: mais
+              - heading [level=1] [ref=e79]: Av. Yoshi Nomiyama, 734, Miguelópolis 14530000
+        - menu [ref=e80]:
+          - generic [ref=e82]:
+            - list [ref=e84]:
+              - listitem [ref=e85]
+              - listitem [ref=e86]
+              - listitem [ref=e87]:
+                - menuitem [ref=e89] [cursor=pointer]:
+                  - link [ref=e90]:
+                    - /url: /stories/highlights/17935977848673365/
+                    - button [disabled] [ref=e91]
+                  - generic [ref=e95]: LOJA Fitness
+              - listitem [ref=e98]:
+                - menuitem [ref=e100] [cursor=pointer]:
+                  - link [ref=e101]:
+                    - /url: /stories/highlights/17963169666043858/
+                    - button [disabled] [ref=e102]
+                  - generic [ref=e106]: Piercing
+              - listitem [ref=e109]:
+                - menuitem [ref=e111] [cursor=pointer]:
+                  - link [ref=e112]:
+                    - /url: /stories/highlights/17962685453584294/
+                    - button [disabled] [ref=e113]
+                  - generic [ref=e117]: MELHORES DO ANO
+              - listitem [ref=e120]:
+                - menuitem [ref=e122] [cursor=pointer]:
+                  - link [ref=e123]:
+                    - /url: /stories/highlights/18007997755616128/
+                    - button [disabled] [ref=e124]
+                  - generic [ref=e128]: Moda masc
+              - listitem [ref=e131]:
+                - menuitem [ref=e133] [cursor=pointer]:
+                  - link [ref=e134]:
+                    - /url: /stories/highlights/18286298176184620/
+                    - button [disabled] [ref=e135]
+                  - generic [ref=e139]: Infatil
+              - listitem [ref=e142]:
+                - menuitem [ref=e144] [cursor=pointer]:
+                  - link [ref=e145]:
+                    - /url: /stories/highlights/18046112794450855/
+                    - button [disabled] [ref=e146]
+                  - generic [ref=e150]: Moda PLUS SIZE
+              - listitem [ref=e153]:
+                - menuitem [ref=e155] [cursor=pointer]:
+                  - link [ref=e156]:
+                    - /url: /stories/highlights/17978527703093295/
+                    - button [disabled] [ref=e157]
+                  - generic [ref=e161]: LOCALIZAÇÃO
+              - listitem [ref=e164]:
+                - menuitem [ref=e166] [cursor=pointer]:
+                  - link [ref=e167]:
+                    - /url: /stories/highlights/17987021252084869/
+                    - button [disabled] [ref=e168]
+                  - generic [ref=e172]: PAGAMENTO 💰
+              - listitem [ref=e175]:
+                - menuitem [ref=e177] [cursor=pointer]:
+                  - link [ref=e178]:
+                    - /url: /stories/highlights/18096176056333192/
+                    - button [disabled] [ref=e179]
+                  - generic [ref=e183]: HORÁRIO
+              - listitem [ref=e186]:
+                - menuitem [ref=e188] [cursor=pointer]:
+                  - link [ref=e189]:
+                    - /url: /stories/highlights/17863644650908402/
+                    - button [disabled] [ref=e190]
+                  - generic [ref=e194]: COLEÇÃO 🐎
+              - listitem [ref=e197]:
+                - menuitem [ref=e199] [cursor=pointer]:
+                  - link [ref=e200]:
+                    - /url: /stories/highlights/17878872656880937/
+                    - button [disabled] [ref=e201]
+                  - generic [ref=e205]: COLEÇÃO ❄️
+            - button [ref=e208] [cursor=pointer]
+        - tablist [ref=e211]:
+          - link [ref=e213] [cursor=pointer]:
+            - /url: /mundo_da_moda_miguelopolis/
+          - link [ref=e226] [cursor=pointer]:
+            - /url: "#"
+          - link [ref=e231] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e236]:
+          - article [ref=e237]:
+            - generic [ref=e239]:
+              - generic [ref=e240]:
+                - link [ref=e242] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/reel/DaWMofbCT8y/
+                - link [ref=e248] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/reel/DP4J69aDXyv/
+                - link [ref=e254] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/reel/Dan-4IPCfb-/
+              - generic [ref=e259]:
+                - link [ref=e261] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/p/DanXOcVlqjg/
+                - link [ref=e267] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/p/DanRNU2FgnO/
+                - link [ref=e273] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/p/DanN5dXlgKB/
+              - generic [ref=e278]:
+                - link [ref=e280] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/p/Dak9BeiIJFZ/
+                - link [ref=e286] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/reel/DakvX6-CoP7/
+                - link [ref=e292] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/reel/DaksCwGCZu5/
+              - generic [ref=e297]:
+                - link [ref=e299] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/p/Dakl4lXFmyM/
+                - link [ref=e305] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/p/DaiILSYlhJE/
+                - link [ref=e311] [cursor=pointer]:
+                  - /url: /mundo_da_moda_miguelopolis/p/DaiFvYhFtNG/
+          - button [ref=e316] [cursor=pointer]:
+            - generic [ref=e317]: Mostrar mais posts de mundo_da_moda_miguelopolis
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - generic [ref=e321]: Contas relacionadas
+              - link [ref=e323] [cursor=pointer]:
+                - /url: /mundo_da_moda_miguelopolis/related_profiles/
+                - generic [ref=e324]: Ver tudo
+            - generic [ref=e326]:
+              - list [ref=e328]:
+                - listitem [ref=e329]
+                - listitem [ref=e330]:
+                  - button [ref=e333] [cursor=pointer]:
+                    - generic [ref=e334]:
+                      - button [ref=e335]
+                      - link [ref=e338]:
+                        - /url: /danimodasmonteaprazivel/
+                      - generic [ref=e340]:
+                        - link [ref=e342]:
+                          - /url: /danimodasmonteaprazivel/
+                          - generic [ref=e343]: danimodasmonteaprazivel
+                        - generic [ref=e347]: Dani Modas | Moda Feminina e Masculina
+                      - button [ref=e350]:
+                        - button [ref=e351]:
+                          - generic [ref=e352]: Seguir
+                - listitem [ref=e354]:
+                  - button [ref=e357] [cursor=pointer]:
+                    - generic [ref=e358]:
+                      - button [ref=e359]
+                      - link [ref=e362]:
+                        - /url: /j.amodas180km/
+                      - generic [ref=e364]:
+                        - link [ref=e366]:
+                          - /url: /j.amodas180km/
+                          - generic [ref=e367]: j.amodas180km
+                        - generic [ref=e368]: ja_modas km 180
+                      - button [ref=e371]:
+                        - button [ref=e372]:
+                          - generic [ref=e373]: Seguir
+                - listitem [ref=e375]:
+                  - button [ref=e378] [cursor=pointer]:
+                    - generic [ref=e379]:
+                      - button [ref=e380]
+                      - link [ref=e383]:
+                        - /url: /lojadapatty.tognon/
+                      - generic [ref=e385]:
+                        - link [ref=e387]:
+                          - /url: /lojadapatty.tognon/
+                          - generic [ref=e388]: lojadapatty.tognon
+                        - generic [ref=e389]: DA PATTY Beauty Store
+                      - button [ref=e392]:
+                        - button [ref=e393]:
+                          - generic [ref=e394]: Seguir
+                - listitem [ref=e396]:
+                  - button [ref=e399] [cursor=pointer]:
+                    - generic [ref=e400]:
+                      - button [ref=e401]
+                      - link [ref=e404]:
+                        - /url: /ljvmodas/
+                      - generic [ref=e406]:
+                        - link [ref=e408]:
+                          - /url: /ljvmodas/
+                          - generic [ref=e409]: ljvmodas
+                        - generic [ref=e410]: LJV MODAS
+                      - button [ref=e413]:
+                        - button [ref=e414]:
+                          - generic [ref=e415]: Seguir
+                - listitem [ref=e417]:
+                  - button [ref=e420] [cursor=pointer]:
+                    - generic [ref=e421]:
+                      - button [ref=e422]
+                      - link [ref=e425]:
+                        - /url: /closetdara_/
+                      - generic [ref=e427]:
+                        - link [ref=e429]:
+                          - /url: /closetdara_/
+                          - generic [ref=e430]: closetdara_
+                        - generic [ref=e431]: Loja Closet da Rá • Varejo e Atacado
+                      - button [ref=e434]:
+                        - button [ref=e435]:
+                          - generic [ref=e436]: Seguir
+                - listitem [ref=e438]:
+                  - button [ref=e441] [cursor=pointer]:
+                    - generic [ref=e442]:
+                      - button [ref=e443]
+                      - link [ref=e446]:
+                        - /url: /m.antonieta_semijoias/
+                      - generic [ref=e448]:
+                        - link [ref=e450]:
+                          - /url: /m.antonieta_semijoias/
+                          - generic [ref=e451]: m.antonieta_semijoias
+                        - generic [ref=e452]: Maria Antonieta Semijoias
+                      - button [ref=e455]:
+                        - button [ref=e456]:
+                          - generic [ref=e457]: Seguir
+                - listitem [ref=e459]:
+                  - button [ref=e462] [cursor=pointer]:
+                    - generic [ref=e463]:
+                      - button [ref=e464]
+                      - link [ref=e467]:
+                        - /url: /drogariatotalmiguelopolis/
+                      - generic [ref=e469]:
+                        - link [ref=e471]:
+                          - /url: /drogariatotalmiguelopolis/
+                          - generic [ref=e472]: drogariatotalmiguelopolis
+                        - generic [ref=e473]: Drogaria Total Miguelópolis
+                      - button [ref=e476]:
+                        - button [ref=e477]:
+                          - generic [ref=e478]: Seguir
+                - listitem [ref=e480]:
+                  - button [ref=e483] [cursor=pointer]:
+                    - generic [ref=e484]:
+                      - button [ref=e485]
+                      - link [ref=e488]:
+                        - /url: /lojawmodas_precounico/
+                      - generic [ref=e490]:
+                        - link [ref=e492]:
+                          - /url: /lojawmodas_precounico/
+                          - generic [ref=e493]: lojawmodas_precounico
+                        - generic [ref=e494]: Loja W Modas. Loja preço único
+                      - button [ref=e497]:
+                        - button [ref=e498]:
+                          - generic [ref=e499]: Seguir
+                - listitem [ref=e501]:
+                  - button [ref=e504] [cursor=pointer]:
+                    - generic [ref=e505]:
+                      - button [ref=e506]
+                      - link [ref=e509]:
+                        - /url: /brunacristinasouza._/
+                      - generic [ref=e511]:
+                        - link [ref=e513]:
+                          - /url: /brunacristinasouza._/
+                          - generic [ref=e514]: brunacristinasouza._
+                        - generic [ref=e515]: Bruna Souza Consultora Multimarcas Cosméticos
+                      - button [ref=e518]:
+                        - button [ref=e519]:
+                          - generic [ref=e520]: Seguir
+                - listitem [ref=e522]:
+                  - button [ref=e525] [cursor=pointer]:
+                    - generic [ref=e526]:
+                      - button [ref=e527]
+                      - link [ref=e530]:
+                        - /url: /cacaushow_miguelopolis/
+                      - generic [ref=e532]:
+                        - link [ref=e534]:
+                          - /url: /cacaushow_miguelopolis/
+                          - generic [ref=e535]: cacaushow_miguelopolis
+                        - generic [ref=e536]: Cacau Show Miguelópolis
+                      - button [ref=e539]:
+                        - button [ref=e540]:
+                          - generic [ref=e541]: Seguir
+                - listitem [ref=e543]:
+                  - button [ref=e546] [cursor=pointer]:
+                    - generic [ref=e547]:
+                      - button [ref=e548]
+                      - link [ref=e551]:
+                        - /url: /_dibellaa/
+                      - generic [ref=e553]:
+                        - link [ref=e555]:
+                          - /url: /_dibellaa/
+                          - generic [ref=e556]: _dibellaa
+                        - generic [ref=e557]: Dibella - Moda e Acessórios
+                      - button [ref=e560]:
+                        - button [ref=e561]:
+                          - generic [ref=e562]: Seguir
+                - listitem [ref=e564]:
+                  - button [ref=e567] [cursor=pointer]:
+                    - generic [ref=e568]:
+                      - button [ref=e569]
+                      - link [ref=e572]:
+                        - /url: /floribellalojafeminina/
+                      - generic [ref=e574]:
+                        - link [ref=e576]:
+                          - /url: /floribellalojafeminina/
+                          - generic [ref=e577]: floribellalojafeminina
+                        - generic [ref=e578]: Floribella | Loja Feminina
+                      - button [ref=e581]:
+                        - button [ref=e582]:
+                          - generic [ref=e583]: Seguir
+                - listitem [ref=e585]:
+                  - button [ref=e588] [cursor=pointer]:
+                    - generic [ref=e589]:
+                      - button [ref=e590]
+                      - link [ref=e593]:
+                        - /url: /fdmodas20/
+                      - generic [ref=e595]:
+                        - link [ref=e597]:
+                          - /url: /fdmodas20/
+                          - generic [ref=e598]: fdmodas20
+                        - generic [ref=e599]: FD Modas
+                      - button [ref=e602]:
+                        - button [ref=e603]:
+                          - generic [ref=e604]: Seguir
+                - listitem [ref=e606]:
+                  - button [ref=e609] [cursor=pointer]:
+                    - generic [ref=e610]:
+                      - button [ref=e611]
+                      - link [ref=e614]:
+                        - /url: /extasybijus/
+                      - generic [ref=e616]:
+                        - link [ref=e618]:
+                          - /url: /extasybijus/
+                          - generic [ref=e619]: extasybijus
+                        - generic [ref=e620]: Extasy Bijous e Cosméticos
+                      - button [ref=e623]:
+                        - button [ref=e624]:
+                          - generic [ref=e625]: Seguir
+                - listitem [ref=e627]:
+                  - button [ref=e630] [cursor=pointer]:
+                    - generic [ref=e631]:
+                      - button [ref=e632]
+                      - link [ref=e635]:
+                        - /url: /padedeloja/
+                      - generic [ref=e637]:
+                        - link [ref=e639]:
+                          - /url: /padedeloja/
+                          - generic [ref=e640]: padedeloja
+                        - generic [ref=e644]: Padedê - Loja de Roupas e Acessórios | Dança
+                      - button [ref=e647]:
+                        - button [ref=e648]:
+                          - generic [ref=e649]: Seguir
+                - listitem [ref=e651]:
+                  - button [ref=e654] [cursor=pointer]:
+                    - generic [ref=e655]:
+                      - button [ref=e656]
+                      - link [ref=e659]:
+                        - /url: /jenifermodas1/
+                      - generic [ref=e661]:
+                        - link [ref=e663]:
+                          - /url: /jenifermodas1/
+                          - generic [ref=e664]: jenifermodas1
+                        - generic [ref=e665]: Jenifer Modas 🛍
+                      - button [ref=e668]:
+                        - button [ref=e669]:
+                          - generic [ref=e670]: Seguir
+                - listitem [ref=e672]:
+                  - button [ref=e675] [cursor=pointer]:
+                    - generic [ref=e676]:
+                      - button [ref=e677]
+                      - link [ref=e680]:
+                        - /url: /casadamoda.boutique/
+                      - generic [ref=e682]:
+                        - link [ref=e684]:
+                          - /url: /casadamoda.boutique/
+                          - generic [ref=e685]: casadamoda.boutique
+                        - generic [ref=e686]: Casa da Moda
+                      - button [ref=e689]:
+                        - button [ref=e690]:
+                          - generic [ref=e691]: Seguir
+                - listitem [ref=e693]:
+                  - button [ref=e696] [cursor=pointer]:
+                    - generic [ref=e697]:
+                      - button [ref=e698]
+                      - link [ref=e701]:
+                        - /url: /donna_ricastore20/
+                      - generic [ref=e703]:
+                        - link [ref=e705]:
+                          - /url: /donna_ricastore20/
+                          - generic [ref=e706]: donna_ricastore20
+                        - generic [ref=e707]: D'onna Rica Store
+                      - button [ref=e710]:
+                        - button [ref=e711]:
+                          - generic [ref=e712]: Seguir
+                - listitem [ref=e714]:
+                  - button [ref=e717] [cursor=pointer]:
+                    - generic [ref=e718]:
+                      - button [ref=e719]
+                      - link [ref=e722]:
+                        - /url: /lumodasvariedades_of/
+                      - generic [ref=e724]:
+                        - link [ref=e726]:
+                          - /url: /lumodasvariedades_of/
+                          - generic [ref=e727]: lumodasvariedades_of
+                        - generic [ref=e728]: LU MODAS | MODA FEMININA & TENDÊNCIA ✨
+                      - button [ref=e731]:
+                        - button [ref=e732]:
+                          - generic [ref=e733]: Seguir
+                - listitem [ref=e735]:
+                  - button [ref=e738] [cursor=pointer]:
+                    - generic [ref=e739]:
+                      - button [ref=e740]
+                      - link [ref=e743]:
+                        - /url: /rosaconfecooes/
+                      - generic [ref=e745]:
+                        - link [ref=e747]:
+                          - /url: /rosaconfecooes/
+                          - generic [ref=e748]: rosaconfecooes
+                        - generic [ref=e749]: Rosa Confecções
+                      - button [ref=e752]:
+                        - button [ref=e753]:
+                          - generic [ref=e754]: Seguir
+                - listitem [ref=e756]:
+                  - button [ref=e759] [cursor=pointer]:
+                    - generic [ref=e760]:
+                      - button [ref=e761]
+                      - link [ref=e764]:
+                        - /url: /majumakesmv/
+                      - generic [ref=e766]:
+                        - link [ref=e768]:
+                          - /url: /majumakesmv/
+                          - generic [ref=e769]: majumakesmv
+                        - generic [ref=e770]: Maju makes e acessórios
+                      - button [ref=e773]:
+                        - button [ref=e774]:
+                          - generic [ref=e775]: Seguir
+                - listitem [ref=e777]:
+                  - button [ref=e780] [cursor=pointer]:
+                    - generic [ref=e781]:
+                      - button [ref=e782]
+                      - link [ref=e785]:
+                        - /url: /mariasemaniaas/
+                      - generic [ref=e787]:
+                        - link [ref=e789]:
+                          - /url: /mariasemaniaas/
+                          - generic [ref=e790]: mariasemaniaas
+                        - generic [ref=e791]: Marias&Manias
+                      - button [ref=e794]:
+                        - button [ref=e795]:
+                          - generic [ref=e796]: Seguir
+                - listitem [ref=e798]:
+                  - button [ref=e801] [cursor=pointer]:
+                    - generic [ref=e802]:
+                      - button [ref=e803]
+                      - link [ref=e806]:
+                        - /url: /deusaboutique_/
+                      - generic [ref=e808]:
+                        - link [ref=e810]:
+                          - /url: /deusaboutique_/
+                          - generic [ref=e811]: deusaboutique_
+                        - generic [ref=e812]: Deusa Boutique
+                      - button [ref=e815]:
+                        - button [ref=e816]:
+                          - generic [ref=e817]: Seguir
+                - listitem [ref=e819]:
+                  - button [ref=e822] [cursor=pointer]:
+                    - generic [ref=e823]:
+                      - button [ref=e824]
+                      - link [ref=e827]:
+                        - /url: /lefashion.bebedouro/
+                      - generic [ref=e829]:
+                        - link [ref=e831]:
+                          - /url: /lefashion.bebedouro/
+                          - generic [ref=e832]: lefashion.bebedouro
+                        - generic [ref=e833]: Lê Fashion/ Moda Feminina e infantil
+                      - button [ref=e836]:
+                        - button [ref=e837]:
+                          - generic [ref=e838]: Seguir
+                - listitem [ref=e840]:
+                  - button [ref=e843] [cursor=pointer]:
+                    - generic [ref=e844]:
+                      - button [ref=e845]
+                      - link [ref=e848]:
+                        - /url: /vivanamodas/
+                      - generic [ref=e850]:
+                        - link [ref=e852]:
+                          - /url: /vivanamodas/
+                          - generic [ref=e853]: vivanamodas
+                        - generic [ref=e854]: Vivana Modas
+                      - button [ref=e857]:
+                        - button [ref=e858]:
+                          - generic [ref=e859]: Seguir
+                - listitem [ref=e861]:
+                  - button [ref=e864] [cursor=pointer]:
+                    - generic [ref=e865]:
+                      - button [ref=e866]
+                      - link [ref=e869]:
+                        - /url: /rosachiclet_kids/
+                      - generic [ref=e871]:
+                        - link [ref=e873]:
+                          - /url: /rosachiclet_kids/
+                          - generic [ref=e874]: rosachiclet_kids
+                        - generic [ref=e875]: MODA INFANTIL
+                      - button [ref=e878]:
+                        - button [ref=e879]:
+                          - generic [ref=e880]: Seguir
+                - listitem [ref=e882]:
+                  - button [ref=e885] [cursor=pointer]:
+                    - generic [ref=e886]:
+                      - button [ref=e887]
+                      - link [ref=e890]:
+                        - /url: /closet_belaeconomia/
+                      - generic [ref=e892]:
+                        - link [ref=e894]:
+                          - /url: /closet_belaeconomia/
+                          - generic [ref=e895]: closet_belaeconomia
+                        - generic [ref=e896]: Closet Bela Economia | Moda Feminina
+                      - button [ref=e899]:
+                        - button [ref=e900]:
+                          - generic [ref=e901]: Seguir
+                - listitem [ref=e903]:
+                  - button [ref=e906] [cursor=pointer]:
+                    - generic [ref=e907]:
+                      - button [ref=e908]
+                      - link [ref=e911]:
+                        - /url: /d2.modasguaira/
+                      - generic [ref=e913]:
+                        - link [ref=e915]:
+                          - /url: /d2.modasguaira/
+                          - generic [ref=e916]: d2.modasguaira
+                        - generic [ref=e917]: D2 MODAS
+                      - button [ref=e920]:
+                        - button [ref=e921]:
+                          - generic [ref=e922]: Seguir
+                - listitem [ref=e924]:
+                  - button [ref=e927] [cursor=pointer]:
+                    - generic [ref=e928]:
+                      - button [ref=e929]
+                      - link [ref=e932]:
+                        - /url: /paiha_modas/
+                      - generic [ref=e934]:
+                        - link [ref=e936]:
+                          - /url: /paiha_modas/
+                          - generic [ref=e937]: paiha_modas
+                        - generic [ref=e938]: 𝐏𝐀𝐈𝐇𝐀́ 𝐌𝐎𝐃𝐀𝐒 👑
+                      - button [ref=e941]:
+                        - button [ref=e942]:
+                          - generic [ref=e943]: Seguir
+                - listitem [ref=e945]:
+                  - button [ref=e948] [cursor=pointer]:
+                    - generic [ref=e949]:
+                      - button [ref=e950]
+                      - link [ref=e953]:
+                        - /url: /rositta.modas.guaira/
+                      - generic [ref=e955]:
+                        - link [ref=e957]:
+                          - /url: /rositta.modas.guaira/
+                          - generic [ref=e958]: rositta.modas.guaira
+                        - generic [ref=e959]: Rositta Modas
+                      - button [ref=e962]:
+                        - button [ref=e963]:
+                          - generic [ref=e964]: Seguir
+                - listitem [ref=e966]:
+                  - button [ref=e969] [cursor=pointer]:
+                    - generic [ref=e970]:
+                      - button [ref=e971]
+                      - link [ref=e974]:
+                        - /url: /fashion20_____/
+                      - generic [ref=e976]:
+                        - link [ref=e978]:
+                          - /url: /fashion20_____/
+                          - generic [ref=e979]: fashion20_____
+                        - generic [ref=e980]: Fashion20
+                      - button [ref=e983]:
+                        - button [ref=e984]:
+                          - generic [ref=e985]: Seguir
+                - listitem [ref=e987]:
+                  - button [ref=e990] [cursor=pointer]:
+                    - generic [ref=e991]:
+                      - button [ref=e992]
+                      - link [ref=e995]:
+                        - /url: /mundodaamoda_/
+                      - generic [ref=e997]:
+                        - link [ref=e999]:
+                          - /url: /mundodaamoda_/
+                          - generic [ref=e1000]: mundodaamoda_
+                        - generic [ref=e1001]: mundodaamoda_
+                      - button [ref=e1004]:
+                        - button [ref=e1005]:
+                          - generic [ref=e1006]: Seguir
+                - listitem [ref=e1008]:
+                  - button [ref=e1011] [cursor=pointer]:
+                    - generic [ref=e1012]:
+                      - button [ref=e1013]
+                      - link [ref=e1016]:
+                        - /url: /lhfashion_modas/
+                      - generic [ref=e1018]:
+                        - link [ref=e1020]:
+                          - /url: /lhfashion_modas/
+                          - generic [ref=e1021]: lhfashion_modas
+                        - generic [ref=e1022]: LH Fashion • Moda Feminina & Acessórios
+                      - button [ref=e1025]:
+                        - button [ref=e1026]:
+                          - generic [ref=e1027]: Seguir
+                - listitem [ref=e1029]:
+                  - button [ref=e1032] [cursor=pointer]:
+                    - generic [ref=e1033]:
+                      - button [ref=e1034]
+                      - link [ref=e1037]:
+                        - /url: /succabrecho/
+                      - generic [ref=e1039]:
+                        - link [ref=e1041]:
+                          - /url: /succabrecho/
+                          - generic [ref=e1042]: succabrecho
+                        - generic [ref=e1043]: SUCCA BRECHÓ
+                      - button [ref=e1046]:
+                        - button [ref=e1047]:
+                          - generic [ref=e1048]: Seguir
+                - listitem [ref=e1050]:
+                  - button [ref=e1053] [cursor=pointer]:
+                    - generic [ref=e1054]:
+                      - button [ref=e1055]
+                      - link [ref=e1058]:
+                        - /url: /delela_modaa/
+                      - generic [ref=e1060]:
+                        - link [ref=e1062]:
+                          - /url: /delela_modaa/
+                          - generic [ref=e1063]: delela_modaa
+                        - generic [ref=e1064]: DELELA
+                      - button [ref=e1067]:
+                        - button [ref=e1068]:
+                          - generic [ref=e1069]: Seguir
+              - button [ref=e1071] [cursor=pointer]
+    - contentinfo [ref=e1073]:
+      - generic [ref=e1074]:
+        - generic [ref=e1076]:
+          - link [ref=e1078] [cursor=pointer]:
+            - /url: https://about.meta.com/
+            - generic [ref=e1079]: Meta
+          - link [ref=e1081] [cursor=pointer]:
+            - /url: https://about.instagram.com/
+            - generic [ref=e1082]: Sobre
+          - link [ref=e1084] [cursor=pointer]:
+            - /url: https://about.instagram.com/blog/
+            - generic [ref=e1085]: Blog
+          - link [ref=e1087] [cursor=pointer]:
+            - /url: https://about.instagram.com/about-us/careers
+            - generic [ref=e1088]: Carreiras
+          - link [ref=e1090] [cursor=pointer]:
+            - /url: https://help.instagram.com/
+            - generic [ref=e1091]: Ajuda
+          - link [ref=e1093] [cursor=pointer]:
+            - /url: https://developers.facebook.com/docs/instagram
+            - generic [ref=e1094]: API
+          - link [ref=e1096] [cursor=pointer]:
+            - /url: /legal/privacy/
+            - generic [ref=e1097]: Privacidade
+          - link [ref=e1099] [cursor=pointer]:
+            - /url: /legal/terms/
+            - generic [ref=e1100]: Termos
+          - link [ref=e1102] [cursor=pointer]:
+            - /url: /explore/locations/
+            - generic [ref=e1103]: Localizações
+          - link [ref=e1105] [cursor=pointer]:
+            - /url: /popular/
+            - generic [ref=e1106]: Popular
+          - link [ref=e1108] [cursor=pointer]:
+            - /url: /web/lite/
+            - generic [ref=e1109]: Instagram Lite
+          - link [ref=e1111] [cursor=pointer]:
+            - /url: https://www.meta.ai/?utm_source=foa_web_footer
+            - generic [ref=e1112]: Meta AI
+          - link [ref=e1114] [cursor=pointer]:
+            - /url: https://www.threads.com/
+            - generic [ref=e1115]: Threads
+          - link [ref=e1117] [cursor=pointer]:
+            - /url: https://www.facebook.com/help/instagram/261704639352628
+            - generic [ref=e1118]: Upload de contatos e não usuários
+          - link [ref=e1120] [cursor=pointer]:
+            - /url: /accounts/meta_verified/?entrypoint=web_footer
+            - generic [ref=e1121]: Meta Verified
+        - generic [ref=e1122]:
+          - generic [ref=e1123] [cursor=pointer]:
+            - generic [ref=e1124]: Português (Brasil)
+            - combobox [ref=e1130]
+          - generic [ref=e1131]: © 2026 Instagram from Meta
+  - dialog [ref=e1144]:
+    - generic [ref=e1145]:
+      - button [active] [ref=e1147] [cursor=pointer]:
+        - img "Fechar" [ref=e1149]
+      - generic [ref=e1153]:
+        - generic [ref=e1154]:
+          - link [ref=e1156] [cursor=pointer]:
+            - img "Foto do perfil de mundo_da_moda_miguelopolis" [ref=e1157]
+          - generic [ref=e1159]:
+            - generic [ref=e1160]: Veja fotos, vídeos e muito mais de mundo_da_moda_miguelopolis
+            - generic [ref=e1161]: Cadastre-se e não perca nenhum post de mundo_da_moda_miguelopolis.
+            - generic [ref=e1164]:
+              - text: Ao continuar, você concorda com os
+              - link "Termos de Uso" [ref=e1165] [cursor=pointer]:
+                - /url: https://help.instagram.com/581066165581870/?locale=pt_BR
+              - text: e a
+              - link "Política de Privacidade" [ref=e1166] [cursor=pointer]:
+                - /url: https://privacycenter.instagram.com/policy/
+              - text: do Instagram.
+        - generic [ref=e1167]:
+          - button "Cadastre-se" [ref=e1170] [cursor=pointer]
+          - button "Entrar" [ref=e1173] [cursor=pointer]
