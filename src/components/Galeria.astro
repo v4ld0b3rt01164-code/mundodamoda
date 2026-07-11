@@ -1,5 +1,18 @@
 ---
 // Galeria — Coverflow 3D (Demo 2 do carrossel-3d.html)
+const slides = [
+  { src: '/galeria/look-cowboy.jpg', alt: 'Look country — vestido brilhante com chapéu e botas' },
+  { src: '/galeria/conjunto-azul-floral.jpg', alt: 'Conjunto blazer e saia — estampa floral azul' },
+  { src: '/galeria/calca-infantil.jpg', alt: 'Calça moletom infantil — conforto e qualidade' },
+  { src: '/1.jpg', alt: 'Modelo com look da Mundo da Moda' },
+  { src: '/ig_2.jpg', alt: 'Look country com chapéu e botas' },
+  { src: '/ig_3.jpg', alt: 'Conjunto estampado floral' },
+  { src: '/ig_5.jpg', alt: 'Look casual feminino' },
+  { src: '/ig_6.jpg', alt: 'Moda feminina estilo' },
+  { src: '/ig_8.jpg', alt: 'Vestido estampado' },
+  { src: '/ig_10.jpg', alt: 'Conjunto elegante' },
+  { src: '/ig_11.jpg', alt: 'Look moderno' },
+];
 ---
 
 <section id="galeria" style="background:#16130F; padding:64px 0">
@@ -7,12 +20,22 @@
 
     <div class="stage-clip">
       <div class="stage">
-        <div class="coverflow" id="coverflow"></div>
+        <div class="coverflow" id="coverflow">
+          {slides.map((s, i) => (
+            <div class="card" data-i={i}>
+              <img src={s.src} alt={s.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
     <div class="controls">
       <button id="cfPrev" aria-label="Anterior">&#8249;</button>
-      <div class="dots" id="cfDots"></div>
+      <div class="dots" id="cfDots">
+        {slides.map((_, i) => (
+          <span class={i === 0 ? 'active' : ''}></span>
+        ))}
+      </div>
       <button id="cfNext" aria-label="Próximo">&#8250;</button>
     </div>
     <div class="name-caption" id="cfCaption"></div>
@@ -65,6 +88,9 @@
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     cursor: pointer;
+    /* Estado inicial via CSS — garante "from" para a transição */
+    opacity: 0;
+    transform: translateX(0) translateZ(-600px) rotateY(0deg) scale(0.6);
   }
   .coverflow .card img {
     width: 100%;
@@ -78,7 +104,7 @@
     justify-content: center;
     gap: 18px;
     margin-top: 8px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
   }
   .controls button {
     width: 42px;
@@ -118,7 +144,7 @@
   }
   .name-caption {
     text-align: center;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
     font-size: 13px;
     color: #9a9490;
     margin-top: 14px;
@@ -137,74 +163,25 @@
   }
 </style>
 
-<script>
-  var SLIDES = [
-    { src: '/galeria/look-cowboy.jpg', alt: 'Look country — vestido brilhante com chapéu e botas' },
-    { src: '/galeria/conjunto-azul-floral.jpg', alt: 'Conjunto blazer e saia — estampa floral azul' },
-    { src: '/galeria/calca-infantil.jpg', alt: 'Calça moletom infantil — conforto e qualidade' },
-    { src: '/1.jpg', alt: 'Modelo com look da Mundo da Moda' },
-    { src: '/ig_2.jpg', alt: 'Look da loja Mundo da Moda' },
-    { src: '/ig_3.jpg', alt: 'Look da loja Mundo da Moda' },
-    { src: '/ig_5.jpg', alt: 'Look da loja Mundo da Moda' },
-    { src: '/ig_6.jpg', alt: 'Look da loja Mundo da Moda' },
-    { src: '/ig_8.jpg', alt: 'Look da loja Mundo da Moda' },
-    { src: '/ig_10.jpg', alt: 'Look da loja Mundo da Moda' },
-    { src: '/ig_11.jpg', alt: 'Look da loja Mundo da Moda' }
-  ];
-
-  /* =========================================================
-     AUTOPLAY HELPER
-  ========================================================= */
-  function createAutoplay(hoverEl, advance, delay) {
-    var timer = null;
-    function start() {
-      stop();
-      timer = setInterval(advance, delay);
-    }
-    function stop() {
-      if (timer) clearInterval(timer);
-      timer = null;
-    }
-    hoverEl.addEventListener('mouseenter', stop);
-    hoverEl.addEventListener('mouseleave', start);
-    hoverEl.addEventListener('touchstart', stop, { passive: true });
-    hoverEl.addEventListener('touchend', start, { passive: true });
-
-    start();
-    return {
-      reset: function () { start(); },
-      stop: stop
-    };
-  }
-
-  /* =========================================================
-     COVERFLOW (Demo 2 — carrossel-3d.html)
-  ========================================================= */
+<script is:inline>
   (function () {
-    var wrap = document.getElementById('coverflow');
+    var cards = document.querySelectorAll('#coverflow .card');
     var dotsWrap = document.getElementById('cfDots');
     var caption = document.getElementById('cfCaption');
-    var n = SLIDES.length;
+    var n = cards.length;
     var active = 0;
-    var cards = [];
 
-    SLIDES.forEach(function (p, i) {
-      var card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = '<img src="' + p.src + '" alt="' + p.alt + '" loading="lazy">';
-      card.addEventListener('click', function () {
-        if (i === active) return;
-        active = i;
-        render();
-        if (auto) auto.reset();
-      });
-      wrap.appendChild(card);
-      cards.push(card);
-
-      var dot = document.createElement('span');
-      if (i === 0) dot.classList.add('active');
-      dotsWrap.appendChild(dot);
-    });
+    function createAutoplay(hoverEl, advance, delay) {
+      var timer = null;
+      function start() { stop(); timer = setInterval(advance, delay); }
+      function stop() { if (timer) clearInterval(timer); timer = null; }
+      hoverEl.addEventListener('mouseenter', stop);
+      hoverEl.addEventListener('mouseleave', start);
+      hoverEl.addEventListener('touchstart', stop, { passive: true });
+      hoverEl.addEventListener('touchend', start, { passive: true });
+      start();
+      return { reset: function () { start(); }, stop: stop };
+    }
 
     function styleFor(offset) {
       var abs = Math.abs(offset);
@@ -221,28 +198,52 @@
     }
 
     function render() {
-      cards.forEach(function (card, i) {
+      for (var i = 0; i < n; i++) {
         var offset = i - active;
         if (offset > n / 2) offset -= n;
         if (offset < -n / 2) offset += n;
         var s = styleFor(offset);
-        card.style.transform = s.t;
-        card.style.webkitTransform = s.t;
-        card.style.zIndex = s.z;
-        card.style.opacity = s.op;
-        card.style.pointerEvents = s.op <= 0 ? 'none' : 'auto';
-      });
+        cards[i].style.transform = s.t;
+        cards[i].style.webkitTransform = s.t;
+        cards[i].style.zIndex = s.z;
+        cards[i].style.opacity = s.op;
+        cards[i].style.pointerEvents = s.op <= 0 ? 'none' : 'auto';
+      }
       var dots = dotsWrap.children;
       for (var d = 0; d < dots.length; d++) {
-        if (d === active) { dots[d].classList.add('active'); }
-        else { dots[d].classList.remove('active'); }
+        dots[d].classList.toggle('active', d === active);
       }
-      caption.innerHTML = '<b>' + SLIDES[active].alt + '</b>';
+      var altTexts = [
+        'Look country — vestido brilhante com chapéu e botas',
+        'Conjunto blazer e saia — estampa floral azul',
+        'Calça moletom infantil — conforto e qualidade',
+        'Modelo com look da Mundo da Moda',
+        'Look country com chapéu e botas',
+        'Conjunto estampado floral',
+        'Look casual feminino',
+        'Moda feminina estilo',
+        'Vestido estampado',
+        'Conjunto elegante',
+        'Look moderno'
+      ];
+      caption.innerHTML = '<b>' + altTexts[active] + '</b>';
     }
+
     function goNext() { active = (active + 1) % n; render(); }
     function goPrev() { active = (active - 1 + n) % n; render(); }
 
-    var auto = createAutoplay(wrap.closest('.stage'), goNext, 1500);
+    for (var i = 0; i < n; i++) {
+      (function (idx) {
+        cards[idx].addEventListener('click', function () {
+          if (idx === active) return;
+          active = idx;
+          render();
+          if (auto) auto.reset();
+        });
+      })(i);
+    }
+
+    var auto = createAutoplay(document.querySelector('#coverflow').closest('.stage'), goNext, 1500);
     document.getElementById('cfNext').addEventListener('click', function () { goNext(); auto.reset(); });
     document.getElementById('cfPrev').addEventListener('click', function () { goPrev(); auto.reset(); });
     render();
